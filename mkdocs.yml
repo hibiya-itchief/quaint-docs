@@ -1,3 +1,12 @@
-site_name: My Docs
+site_name: 星陵祭オンライン整理券
 theme:
+  language: ja
   name: material
+  palette:
+    scheme: default
+    primary: light blue
+    accent: indigo
+  font:
+      text: Noto Sans JP
+      code: Roboto Mono
+  logo: assets/logo.png

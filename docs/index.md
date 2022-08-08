@@ -1,17 +1,13 @@
-# Welcome to MkDocs
+# 日比谷高校星陵祭 オンライン整理券 ドキュメント
+日比谷高校星陵祭のオンライン整理券システムのドキュメント
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## 星陵祭オンライン整理券システムはこちら
+https://hibiya-itchief.github.io/quaint-app/
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## 来場者の方へ
+### まずはじめに
+- 事前に配布されたアカウントでログインしてください
+- ・・・
+## 星陵祭スタッフへ
+- 事前に配布されたアカウントでログインしてください
+- ・・・
