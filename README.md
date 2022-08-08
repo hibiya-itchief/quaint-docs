@@ -6,11 +6,14 @@
 - /docs をフォルダ分けするとドキュメントページも階層分けされる
 ## ドキュメントのプレビュー
 VSCodeの「実行」ボタンを押す(Google Chromeで開く)
+
 ![実行](images/launch_chrome.png)
 ## ドキュメントの公開
 1. VSCodeのGitタブからcommit(コミットメッセージは変更内容をわかりやすく書く)
+
     ![commit](images/commit.png)
 2. 「変更を同期」
+
     ![push](images/push.png)
 3. GitHub Actionsを組んであるので自動でbuildされて、公開される
     URL: <https://hibiya-itchief.github.io/quaint-docs/>
