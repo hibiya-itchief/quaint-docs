@@ -10,4 +10,4 @@ https://hibiya-itchief.github.io/quaint-app/
 - ・・・
 ## 星陵祭スタッフへ
 - 事前に配布されたアカウントでログインしてください
-- ・・・
+- 星陵祭は星稜祭ではない
