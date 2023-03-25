@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Preview on Chrome",
+            "url": "http://localhost:4000",
+            "preLaunchTask": "mkdocs-serve",
+            "postDebugTask": "mkdocs-stop"
+        }
+    ]
+}
