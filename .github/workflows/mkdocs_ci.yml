@@ -9,6 +9,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: GitHub Pages
+      url: https://hibiya-itchief.github.io/quaint-docs/
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
