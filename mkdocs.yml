@@ -7,6 +7,26 @@ theme:
     primary: light blue
     accent: indigo
   font:
-      text: Noto Sans JP
-      code: Roboto Mono
+    text: Noto Sans JP
+    code: Roboto Mono
   logo: assets/logo.png
+
+nav:
+  - "seiryofes.comへ": https://seiryofes.com
+  - トップページ: index.md
+  - "一般・保護者の方":
+      - "アカウントの作成": public/create_account.md
+  - "本校生徒・学校関係者":
+      - "ログインのしかた": student/login.md
+  - "クラ代・団体代表者":
+      - "団体情報の編集": owner/manage_group.md
+  - "チーフ会入校処理担当者":
+      - "来校者の入校処理とは": entry/about.md
+  - "管理者向け":
+      - "権限について": admin/role.md
+      - "フロントエンドのビルド": admin/build_frontend.md
+  - "IT委員会勉強会資料":
+      - "もくじ": studybook/index.md
+      - "春休み0日目 環境構築": studybook/spring_day0_setup_environment.md
+      - "春休み1日目 ツールの使い方": studybook/spring_day1_tutorial.md
+      - "春休み2日目 Nuxt.js入門": studybook/spring_day2_nuxtjs.md
