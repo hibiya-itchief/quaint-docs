@@ -1,4 +1,4 @@
-name: Kazuki TAKEI
+name: KT-7728
 programming history: VB 4 years
                      html/css 2 years
                      javascript 2 years
