@@ -21,7 +21,6 @@ nav:
       - "来校者の入校処理とは": entry/about.md
   - "開発者・管理者向け":
       - "はじめに": developers/index.md
-          - "はじめに2": developers/index.md
       - "アプリケーションの構成": developer/app_structure.md
       - "権限について": developer/role.md
       - "フロントエンドのビルド": developer/build_frontend.md
