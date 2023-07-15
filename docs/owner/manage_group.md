@@ -6,7 +6,7 @@
 
 ![説明用画像１](images/explanation1.png)
 
-<span style="color:red">**自分の学校から配られたアカウント(~@metro.ed.jpで終わるアカウント）で入っている**</span>こと、また自分のアカウントに<span style="color:red">**クラス代表用の権限（Owner）が与えられている**</span>ことを確認してください。
+<span style="color:red">**自分の学校から配られたアカウント(~@metro.ed.jpで終わるアカウント）で入っている**</span>こと、また自分のアカウントに<span style="color:red">クラス代表の人は**クラス代表用の権限（Owner）**、IT委員の人は**管理者権限(admin)**が与えられている</span>ことを確認してください。
 
 ![説明用画像２](images/explanation2.png)
 
@@ -61,6 +61,9 @@
 「タグを追加」というボタンをクリクし、追加するタグを選択してください。その後「追加」というボタンをクリックして完了です！
 
 ### ＃公演の編集
+#### <span style="color:orange">注意</span>
+<span style="color:orange">公演はチーフ会の指示に従って作成、編集してください。</span>
+
 「公演名」に公演名を入力してください。
 
 「公演の対象者を選択」ボタンをクリックし、公演の対象者を選択してください。
