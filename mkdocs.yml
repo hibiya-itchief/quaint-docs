@@ -12,23 +12,35 @@ theme:
   logo: assets/logo.png
 
 nav:
-  - "seiryofes.comへ": https://seiryofes.com
-  - "星陵祭オンライン整理券システムの使い方": index.md
-  - "オンライン整理券システムの制作背景・実現する機能": features.md
-  - "クラ代・団体代表者":
+  - "当システムの使い方": index.md
+  - "当システムについて詳しく":
+      - "制作背景": detail/history.md
+      - "システムの詳細": detail/system.md
+      - "ユーザーの権限": detail/role.md
+  - "クラ代・団体代表者向け":
       - "団体情報の編集": owner/manage_group.md
-  - "チーフ会入校処理担当者":
+  - "チーフ会入校処理担当者向け":
       - "来校者の入校処理とは": entry/about.md
-  - "開発者・管理者向け":
-      - "はじめに": developers/index.md
-      - "アプリケーションの構成": developer/app_structure.md
-      - "権限について": developer/role.md
-      - "フロントエンドのビルド": developer/build_frontend.md
-      - "APIサーバーの構成": developer/api_server.md
-      - "APIドキュメント (Swagger UI)の使い方": developer/api_docs.md
+  - "開発者向け":
+      - "はじめに": developer/index.md
+      - "githubの使い方": developer/github.md
+      - "APIドキュメント": developer/swagger-ui.md
+      - "システムの詳細(開発者向け)": developer/system-dev.md
+      - "javascript/typescript": developer/js-ts.md
+      - "nuxt.js": developer/nuxt-js.md
+      - "vue.js": developer/vue-js.md
+      - "vuetify": developer/vuetify.md
+      - "FastAPI": developer/fast-api.md
+      - "その他": developer/php-my-admin.md
 
-  - "IT委員会勉強会資料":
+  - "昨年度IT委員会勉強会資料":
       - "もくじ": studybook/index.md
       - "春休み0日目 環境構築": studybook/spring_day0_setup_environment.md
       - "春休み1日目 ツールの使い方": studybook/spring_day1_tutorial.md
       - "春休み2日目 Nuxt.js入門": studybook/spring_day2_nuxtjs.md
+
+
+  - "もどる": https://seiryofes.com
+
+
+
