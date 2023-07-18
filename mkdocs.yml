@@ -23,7 +23,7 @@ nav:
       - "来校者の入校処理とは": entry/about.md
   - "開発者向け":
       - "はじめに": developer/index.md
-      - "githubの使い方": developer/github.md
+      - "GitHubの使い方": developer/github.md
       - "APIドキュメント": developer/swagger-ui.md
       - "システムの詳細(開発者向け)": developer/system-dev.md
       - "javascript/typescript": developer/js-ts.md
