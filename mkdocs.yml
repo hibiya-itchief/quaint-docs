@@ -26,10 +26,10 @@ nav:
       - "GitHubの使い方": developer/github.md
       - "APIドキュメント": developer/swagger-ui.md
       - "システムの詳細(開発者向け)": developer/system-dev.md
-      - "javascript/typescript": developer/js-ts.md
-      - "nuxt.js": developer/nuxt-js.md
-      - "vue.js": developer/vue-js.md
-      - "vuetify": developer/vuetify.md
+      - "JavaScript/TypeScript": developer/js-ts.md
+      - "Nuxt.js": developer/nuxt-js.md
+      - "Vue.jsなど": developer/vue-js.md
+      - "Vuetify": developer/vuetify.md
       - "FastAPI": developer/fast-api.md
       - "その他": developer/php-my-admin.md
 
