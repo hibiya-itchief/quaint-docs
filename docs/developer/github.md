@@ -24,7 +24,7 @@ GitHub上にソースコードがあります。<br>
 この中にたくさんのファイルやフォルダが入っています。<br>
 
 IT委員会のGitHubの [Overview](https://github.com/hibiya-itchief) ではレポジトリの一覧が表示されます。<br>
-レポジトリ名の横にPublicと書かれている場合、外部の人が中身を見ることができます。個人情報に注意しましょう。<br>
+レポジトリ名の横に**`Public`**と書かれている場合、外部の人が中身を見ることができます。個人情報に注意しましょう。<br>
 <br>
 
 各レポジトリについては以下の通りです。<dl>
@@ -39,7 +39,7 @@ IT委員会のGitHubの [Overview](https://github.com/hibiya-itchief) ではレ�
 </dl>
 <br>
 
-ここでは例として [quaint-app](https://github.com/hibiya-itchief/quaint-app/tree/develop) レポジトリのdevelop[ブランチ](#branch)(後述)を使って説明します。<br>
+ここでは例として [quaint-app](https://github.com/hibiya-itchief/quaint-app/tree/develop) レポジトリの**`develop`**[ブランチ](#branch)(後述)を使って説明します。<br>
 
 ![画像](images/github-2.png)
 赤枠の内容を上から順に説明します。<br>
@@ -98,25 +98,25 @@ issueを解決するために作ることが多いです。<br>
 ![画像](images/github-4.png)
 branch一覧のページです。<br>
 
-Default Branchはmainとなっていますが、<br>
-実質本流にあたるのはmainブランチ、developブランチの2つです。<br>
+**`Default Branch`**は **`main`** となっていますが、<br>
+実質本流にあたるのは **`main`** ブランチ、**`develop`**ブランチの2つです。<br>
 この2つは直接編集ができないようになっています。<br>
 
-mainは[seiryofes.com](#_3)の中身にあたります。<br>
+**`main`**は[seiryofes.com](#_3)の中身にあたります。<br>
 
-developは開発における本流で、<br>
-ほとんどのbranchはdevelopから分流され、<br>
-developにプルリクエストします。<br>
-mainをdevelopと同じにすることで、seiryofes.comの内容が最新版になるということになります。<br>
+**`develop`**は開発における本流で、<br>
+ほとんどのbranchは **`develop`** から分流され、<br>
+**`develop`**にプルリクエストします。<br>
+**`main`**を **`develop`** と同じにすることで、seiryofes.comの内容が最新版になるということになります。<br>
 
 
-Active branchesは３か月以内にcommitがあったbranchで、<br>
-Stale Branchesはそれより古いもののことです。特に語ることはありません。<br>
+**`Active branches`**は３か月以内にcommitがあったbranchで、<br>
+**`Stale Branches`**はそれより古いもののことです。特に語ることはありません。<br>
 
 ![画像](images/github-5.png)
 branchを作る際は、名前と、源流を指定されます。<br>
-ふつう源流はdevelopでよいと思います(ふつう変更箇所をdevelopに結合するため)。<br>
-ただし、Default Branchがmainブランチなので、新しく作った時点ではmainがプルリクエスト先となっています。<br>
+ふつう源流は **`develop`** でよいと思います(ふつう変更箇所を **`develop`** に結合するため)。<br>
+ただし、**`Default Branch`**が **`main`** ブランチなので、新しく作った時点では **`main`** がプルリクエスト先となっています。<br>
 注意しましょう。<br>
 私[@hibiyahibiyahibiya](https://github.com/orgs/hibiya-itchief/people/hibiyahibiyahibiya)は、ブランチ名を基本 **`#(issueの番号)-内容`** としています。<br>
 
@@ -144,7 +144,7 @@ commitにはどのような変更を行ったのかを書いておきます。<b
 同じ轍は踏まないようお願いします。<br>
 代わりに、後に記述する[Codespace](#codespace)内で編集を行いましょう。<br>
 
-また、mainブランチ・developブランチではcommitはできず、代わりに「 *Propose changes* 」となります。<br>
+また、**`main`**ブランチ・**`develop`**ブランチではcommitはできず、代わりに「 *Propose changes* 」となります。<br>
 この両branchを編集したいなら、新しくbranchを作って、そこでcommitしてプルリクエストしてくださいということです。<br><br><br><br>
 
 ## Issue
@@ -256,7 +256,7 @@ PythonやJavaScriptなどのプログラミング言語で記述する。
 * **ローカル環境を整備しなくとも** … 何もダウンロードする必要はないということ。
 * すべてWeb上で完結させることができる。
 * **seiryofes.com** … 正確には、2023.seiryofes.com(2023年度の場合)。<br>
-現在はseiryofes.comに飛ぶと20**.seiryofes.comにリダイレクト(飛ばす)するようになっている。
+現在はseiryofes.comに飛ぶと20**.seiryofes.comにリダイレクトするようになっている。
 * **pages/index.vue** … 「(**`quaint-app`**レポジトリ内の)**`pages`**フォルダの中の **`index.vue`** ファイル」という意味。<br>
 このようなファイルの位置の示し方をpathという。
 

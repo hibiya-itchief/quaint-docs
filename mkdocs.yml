@@ -27,11 +27,9 @@ nav:
       - "APIドキュメント": developer/swagger-ui.md
       - "システムの詳細(開発者向け)": developer/system-dev.md
       - "JavaScript/TypeScript": developer/js-ts.md
-      - "Nuxt.js": developer/nuxt-js.md
       - "Vue.jsなど": developer/vue-js.md
-      - "Vuetify": developer/vuetify.md
       - "FastAPI": developer/fast-api.md
-      - "その他": developer/php-my-admin.md
+      - "データベース": developer/database.md
 
   - "昨年度IT委員会勉強会資料":
       - "もくじ": studybook/index.md
