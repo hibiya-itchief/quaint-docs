@@ -58,7 +58,7 @@ IT委員会のGitHubの [Overview](https://github.com/hibiya-itchief) ではレ�
 右端のCodeというのは[Codespace](#codespace)を作るためのボタンです。後で詳しくやります。<br>
 <br>
 
-また、画面外下方には **`README.md`** が表示されています。<br>
+また、画面外下方には **`README.md`** のプレビューが表示されています。<br>
 <br>
 
 次に、[pages/index.vue](#_3)を例にして、ファイルの編集画面を説明します。<br>
@@ -87,8 +87,9 @@ issueを解決するために作ることが多いです。<br>
 ![画像](images/github-4.png)
 branch一覧のページです。<br>
 
+ **`quaint-app`** レポジトリの場合、<br> 
  **`Default Branch`** は **`develop`** となっていますが、<br>
-それに加えて **`main`** ブランチも重要なブランチとなっています。
+それに加えて **`main`** ブランチも重要なブランチとなっています。<br>
 この2つは直接編集ができないようになっています。<br>
 
  **`main`** は[seiryofes.com](#_3)の中身にあたります。<br>
@@ -132,7 +133,10 @@ commit名にはどのような変更を行ったのかを書いておきます�
 代わりに、後に記述する[Codespace](#codespace)内か[Web Editor](#web-editor)内で編集を行いましょう。<br>
 
 また、**`main`**ブランチ・**`develop`**ブランチではcommitはできず、代わりに「 *Propose changes* 」となります。<br>
-この両branchを編集したいなら、新しくbranchを作って、そこでcommitしてマージしてくださいということです。<br><br><br><br>
+この両branchを編集したいなら、新しくbranchを作って、そこでcommitしてマージしてくださいということです。<br>
+
+また、commitと同じような言葉にpushという言葉があります。<br>
+GitHubのみを使うのであればその違いは意識しなくて大丈夫です。<br><br><br><br>
 
 ## Issue
 ---
@@ -143,13 +147,19 @@ Issueとは、いわゆるタスク一覧、To Doリストのことです。<br>
 右上のNew Issueで新しくissueを作ることができます。<br>
 また、**Open**には現在あるissue、**Closed**にはすでに解決したissueが並んでいます。<br>
 
-![画像](images/github-6.png)
-issueを見る画面です（再掲）。
+![画像](images/github-10.png)
+issueを見る画面です（再掲、赤枠を追加）。
 
 
-赤枠上方のAssigneesは、誰が問題を担当するのかを分かりやすくするための機能です。<br>
+一番上の赤枠のAssigneesは、誰が問題を担当するのかを分かりやすくするための機能です。<br>
 この画像のissueは **`@hibiyahibiyahibiya`** が担当するということです。<br>
 また、誰もいないときには *assign yourself* というテキストがあるので、そちらを押すと自分自身をアサインできます。<br>
+
+その下のLabelsでは、issueの種類を示すことができます。<br>
+たとえば **`Type: Bug Fix`** を選択すれば、このissueはバグを直したいというissueであることが判りやすくなります。<br>
+
+下のDevelopmentは[既に説明した](#branch--commit)通りです。<br>
+<br>
 
 プルリクエストで問題が解決するなどしたときには、issueをClosedにしてください。<br>
 
@@ -213,7 +223,7 @@ VSCode(アプリ)で **`quaint-app`** レポジトリを開発する場合、ア
 (lintエラーを紹介)
 * docsの場合はCtrl+F5(Surfaceの場合、キーボード左下のFnボタンを押して光らせてから。要加筆)
 
-コアタイムの説明も入れる。
+時間制限のあること、コアタイムの説明も入れる。
 そのため使わないときはstopさせたり、もう使わないものは削除したりすること。
 
 

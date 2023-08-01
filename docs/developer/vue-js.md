@@ -1,4 +1,27 @@
-# Vue.jsなど
+# フロントエンド開発
+
+
+
+臨時的に[このリンク先](https://hibiya-itchief.github.io/quaint-docs/developer/fortraining/)でフロントエンド開発の解説を行っています。
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+`Vue.js`など
 
 このページでは **`Vue.js`** を軸として、 **`Nuxt.js`** および **`Vuetify`** についても説明します。<br>
 
@@ -51,9 +74,6 @@ Node.jsについても記述するファイルを作成する。
 
 `<style>`はデザインを修飾するために使います。<br>
 **`CSS`**で書きます。<br>
-あまり使うことはありません。<br>
-
-
 
 
 
@@ -65,8 +85,8 @@ Node.jsについても記述するファイルを作成する。
 ### `<template>`内
 
 `<template>`内では **`Vuetify`** を使います。<br>
-**`Vuetify`**とは、**`Vue.js`**の `<template>` を作りやすくするためのUIフレームワークです。<br>
-当システムでは **`Vuetify 2`** を使っています。**`Vuetify 3`**ではないので注意しましょう。<br>
+ **`Vuetify`** とは、 **`Vue.js`** の `<template>` を作りやすくするためのUIフレームワークです。<br>
+当システムでは **`Vuetify 2`** を使っています。 **`Vuetify 3`** ではないので注意しましょう。<br>
 
 基本的には、既にある **`.vue`** ファイルの `<template>` を見て骨子を理解しましょう。<br>
 また、[Vuetify 2のドキュメント](https://v2.vuetifyjs.com/ja/components/buttons/)は充実していて、しかも日本語対応しているので、<br>
@@ -81,7 +101,7 @@ Node.jsについても記述するファイルを作成する。
 [このページ](https://v2.vuetifyjs.com/ja/features/icon-fonts/)を参照してください。
 
 #### 引数の値の表示
-`hoge = 5`のとき、<br>
+`hoge = 5` のとき、<br>
 **`{{ hoge }}`**と記述すると `5` と表示されます。<br>
 
 【要加筆】
@@ -96,19 +116,18 @@ Node.jsについても記述するファイルを作成する。
 
 ### `<script>`内
 
-* **`JavaScript`**
 * **`TypeScript`**
 * **`Vue.js`**
 * **`Nuxt.js`**
 
-の4言語が混じっています。<br>
+の3言語が混じっています。<br>
 なので、たとえば **`JavaScript`** の範囲の内容で検索しても、サイトに載っているソースコードの例と当システムのソースコードは全然違うと思います。<br>
 
 `<script>`内での疑問点は特に、先輩たちの手がけたソースコードの中から発掘することで解決する事例が多いです。<br>
 そのことを念頭において開発に励んでください。<br>
 <br>
 
-先に、[Vue.js特有の要素](#scriptvuejs)と[JavaScriptのページ](リンク)の2つに目を通すのをおすすめします。<br>
+先に、[Vue.js特有の要素](#scriptvuejs)と[JavaScriptのページ](https://hibiya-itchief.github.io/quaint-docs/developer/js-ts/)の2つに目を通すのをおすすめします。<br>
 
 また、各 **`.vue`** ファイルで用いられている引数や関数がそれぞれ何を意味するか、<br>
 どういう意図で設定しているかを解説した **`.md`** ファイルを **`quaint-app`** レポジトリの各フォルダに用意する予定となっています。
