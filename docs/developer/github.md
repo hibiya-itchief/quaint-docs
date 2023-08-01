@@ -24,7 +24,7 @@ GitHub上にソースコードがあります。<br>
 この中にたくさんのファイルやフォルダが入っています。<br>
 
 IT委員会のGitHubの [Overview](https://github.com/hibiya-itchief) ではレポジトリの一覧が表示されます。<br>
-レポジトリ名の横に**`Public`**と書かれている場合、外部の人が中身を見ることができます。個人情報に注意しましょう。<br>
+レポジトリ名の横に **`Public`** と書かれている場合、外部の人が中身を見ることができます。個人情報に注意しましょう。<br>
 <br>
 
 各レポジトリについては以下の通りです。<dl>
@@ -35,25 +35,16 @@ IT委員会のGitHubの [Overview](https://github.com/hibiya-itchief) ではレ�
 <dt>quaint-docs</dt>
 <dd>現在開いているこのサイトの中身です。多くのファイルが .md 形式で、1つ1つが1ページに対応しています。</dd>
 <dt>general</dt>
-<dd>唯一Privateレポジトリ(非公開)で、IT委員会内部についての情報などを入れる予定となっています。</dd>
+<dd>唯一Privateレポジトリ(非公開のレポジトリ)で、IT委員会内部についての情報などを入れる予定となっています。</dd>
 </dl>
 <br>
 
-ここでは例として [quaint-app](https://github.com/hibiya-itchief/quaint-app/tree/develop) レポジトリの**`develop`**[ブランチ](#branch)(後述)を使って説明します。<br>
+ここでは例として [quaint-app](https://github.com/hibiya-itchief/quaint-app/tree/develop) レポジトリの **`develop`** [ブランチ](#branch)(後述)を使って説明します。<br>
 
 ![画像](images/github-2.png)
 赤枠の内容を上から順に説明します。<br>
 
-検索ボックスでは、<br>
-
-* IT委員会という組織(Organization)の中<br>
-* 現在開いているレポジトリの中<br>
-
-のどちらで検索するのか決めることができます。<br>
-ただし、この検索はあまりヒットしない(検索が厳しい)イメージなので気を付けてください。<br>
-<br>
-
-次に、一番左の[Code](https://github.com/hibiya-itchief/quaint-app/tree/develop)ではソースコードの一覧が表示されます。<br>
+一番左の[Code](https://github.com/hibiya-itchief/quaint-app/tree/develop)ではソースコードの一覧が表示されます。<br>
 
 [Issues](https://github.com/hibiya-itchief/quaint-app/issues)では、このレポジトリ内のissue一覧が表示されます。後で詳しくやります。<br>
 
@@ -63,8 +54,6 @@ IT委員会のGitHubの [Overview](https://github.com/hibiya-itchief) ではレ�
 次の赤枠は、現在開いている[branch](#branch-commit)を示しています。<br>
 
 その右には現在このレポジトリにあるbranchの数が示され、押すとbranch一覧のページに飛びます。後で詳しくやります。<br>
-
-右から2番目のAdd fileではファイルを追加することができます。<br>
 
 右端のCodeというのは[Codespace](#codespace)を作るためのボタンです。後で詳しくやります。<br>
 <br>
@@ -83,7 +72,7 @@ IT委員会のGitHubの [Overview](https://github.com/hibiya-itchief) ではレ�
 
 内容を編集して、[Commit](#branch-commit)をします(Ctrl + Sでも可)。後で詳しくやります。<br>
 
-ただし、この画面で編集することはまれで、[Codespace](#codespace)で行うことが多いです。<br><br><br><br>
+ただし、この画面で編集することはまれで、[Web Editor](#web-editor)あるいは[Codespace](#codespace)で行うことが多いです。<br><br><br><br>
 
 ## Branch / Commit
 ---
@@ -98,27 +87,25 @@ issueを解決するために作ることが多いです。<br>
 ![画像](images/github-4.png)
 branch一覧のページです。<br>
 
-**`Default Branch`**は **`main`** となっていますが、<br>
-実質本流にあたるのは **`main`** ブランチ、**`develop`**ブランチの2つです。<br>
+ **`Default Branch`** は **`develop`** となっていますが、<br>
+それに加えて **`main`** ブランチも重要なブランチとなっています。
 この2つは直接編集ができないようになっています。<br>
 
-**`main`**は[seiryofes.com](#_3)の中身にあたります。<br>
+ **`main`** は[seiryofes.com](#_3)の中身にあたります。<br>
 
-**`develop`**は開発における本流で、<br>
+ **`develop`** は開発における本流で、<br>
 ほとんどのbranchは **`develop`** から分流され、<br>
-**`develop`**にプルリクエストします。<br>
-**`main`**を **`develop`** と同じにすることで、seiryofes.comの内容が最新版になるということになります。<br>
+ **`develop`** に[マージ](#pull-request)されます。<br>
+ **`develop`** を **`main`** にマージすることで、seiryofes.comの内容が更新され、最新版になるということです。<br>
 
 
-**`Active branches`**は３か月以内にcommitがあったbranchで、<br>
-**`Stale Branches`**はそれより古いもののことです。特に語ることはありません。<br>
+ **`Active branches`** は３か月以内にcommitがあったbranchで、<br>
+ **`Stale Branches`** はそれより古いもののことです。特に語ることはありません。<br>
 
 ![画像](images/github-5.png)
 branchを作る際は、名前と、源流を指定されます。<br>
 ふつう源流は **`develop`** でよいと思います(ふつう変更箇所を **`develop`** に結合するため)。<br>
-ただし、**`Default Branch`**が **`main`** ブランチなので、新しく作った時点では **`main`** がプルリクエスト先となっています。<br>
-注意しましょう。<br>
-私[@hibiyahibiyahibiya](https://github.com/orgs/hibiya-itchief/people/hibiyahibiyahibiya)は、ブランチ名を基本 **`#(issueの番号)-内容`** としています。<br>
+私[@hibiyahibiyahibiya](https://github.com/orgs/hibiya-itchief/people/hibiyahibiyahibiya)は、ブランチ名を基本 **`#(issueの番号)-(内容)`** としています。<br>
 
 また、[issue](#issue)の方からもbranchをつくることができます。<br>
 
@@ -127,25 +114,25 @@ branchを作る際は、名前と、源流を指定されます。<br>
 
 ![画像](images/github-7.png)<br>
 そうすると、このように最初から<br>
-**`(issueの番号)-(issueの題名)`**<br>
+ **`(issueの番号)-(issueの題名)`** <br>
 という名前でつくることができます。<br>
 
 ![画像](images/github-8.png)<br>
-また、ファイル編集画面で編集後、右上の「Commit changes...」というボタンを押すか「Ctrl+S」を押すと、Commitができます。<br>
+また、先述のファイル編集画面で編集後、右上の「Commit changes...」というボタンを押すか「Ctrl+S」を押すと、**Commit**ができます。<br>
 (ファイルの内容がひとつも変わっていないと、押しても出てきません)<br>
 
 Commitとは、branch内で編集内容を更新することです。<br>
 
-commitにはどのような変更を行ったのかを書いておきます。<br>
+commit名にはどのような変更を行ったのかを書いておきます。<br>
 また、commitは「編集」とは違い、軌跡を残すというイメージの方がよいです。<br>
 
 ![画像](images/github-9.png)
-編集のつもりでcommitを使っていたときの画像です。<br>
+編集中の試行錯誤を全てcommitで行っていたときの画像です。<br>
 同じ轍は踏まないようお願いします。<br>
-代わりに、後に記述する[Codespace](#codespace)内で編集を行いましょう。<br>
+代わりに、後に記述する[Codespace](#codespace)内か[Web Editor](#web-editor)内で編集を行いましょう。<br>
 
 また、**`main`**ブランチ・**`develop`**ブランチではcommitはできず、代わりに「 *Propose changes* 」となります。<br>
-この両branchを編集したいなら、新しくbranchを作って、そこでcommitしてプルリクエストしてくださいということです。<br><br><br><br>
+この両branchを編集したいなら、新しくbranchを作って、そこでcommitしてマージしてくださいということです。<br><br><br><br>
 
 ## Issue
 ---
@@ -173,7 +160,9 @@ issueを見る画面です（再掲）。
 <br><br><br><br>
 ## Pull request
 ---
-プルリクエストとは、本流とbranchの間の変更箇所を結合して本流の一部にする機能のことです。<br>
+プルリクエストとは、本流とbranchの間の変更箇所を結合して本流の一部にするための機能のことです。<br>
+(以下、結合することをマージと言う)<br>
+正確には、マージしたいというお願いのことです。<br>
 長いのでPRと略すこともあります。<br>
 
 
@@ -182,15 +171,15 @@ issueを見る画面です（再掲）。
 
 [プルリクエストのページ](https://github.com/hibiya-itchief/quaint-app/pulls)(quaint-app)<br>
 
-Openの方には緑色のマークのプルリクエストがあり、これは結合待ちであることを示している。<br>
-Closedの方に紫色・赤色のマークのものがあり、前者は無事結合されたこと、後者は何らかの理由があって結合されず閉じられたものであることを示しています。<br>
+Openの方には緑色のマークのプルリクエストがあり、これはマージ待ちであることを示している。<br>
+Closedの方に紫色・赤色のマークのものがあり、前者は無事マージされたこと、後者は何らかの理由があってマージされず閉じられたものであることを示しています。<br>
 
 名前の右についている緑色のチェックやオレンジ色の丸、赤色のバツは確認してくれるbotによるもの。<br>
-詳しくは要加筆。<br>
+詳しくは【要加筆】。<br>
 
 プルリクエスト内では、<br>
 Review … プルリクエストを精査する人のこと。指定できる。<br>
-Reviewの仕方については要加筆。<br><br><br><br>
+Reviewの仕方については【要加筆】。<br><br><br><br>
 
 
 
@@ -211,17 +200,34 @@ Codespaceとは、編集しながら、実際にプログラムがどう動作�
 また、設定でVSCode(アプリ)が開くようにもできます。<br>
 最初にVSCode(アプリ)をインストールします（説明を省くか要検討）。<br>
 ここの設定で変えられます（要加筆）。<br>
+アプリの方がリアルタイムでエラーを見つけてくれるから便利(要加筆)。<br>
 
 VSCode(アプリ)で **`quaint-app`** レポジトリを開発する場合、アドレスバーを127.0.0.1:3000からlocalhost:3000に変更しましょう。<br>
-そうすることでログイン処理ができます(どこで指定しているのか要加筆)<br>
+そうすることでログイン処理ができます。<br>
+[ここ](https://github.com/hibiya-itchief/quaint-docs/pull/21#discussion_r1270231270)で指定されていることを記す。<br>
 
-* 最初にyarnを入れること(終了コード127)
+* 最初にyarnを入れること(終了コード127)<br>
+(設定で不要にする予定)
 * yarn run devあるいはエクスプローラーのdevを押してプレビュー(同時に[GitHub Pages](#github-actions)の軽い説明)
 * yarn run lintfixあるいはエクスプローラーlintfixで整形
 (lintエラーを紹介)
 * docsの場合はCtrl+F5(Surfaceの場合、キーボード左下のFnボタンを押して光らせてから。要加筆)
 
+コアタイムの説明も入れる。
+そのため使わないときはstopさせたり、もう使わないものは削除したりすること。
+
+
 <br><br><br><br>
+
+## Web Editor
+---
+【要加筆】<br>
+
+github.com/~~~となっているところを、<br>
+github.**dev**/~~~と書き換えると開くことができる。<br>
+基本的にVSCode(Web)と同じです。<br>
+当然ですがCodespaceのコアタイムを消費しません。<br>
+複数ファイルの同時commitができるため、編集は基本的にWeb Editorを使うのがよいと思います。<br><br><br><br>
 
 ## GitHub Actions など
 ---
@@ -231,22 +237,28 @@ GitHub ActionsやDependabot、GitHub Pagesなどについて説明する予定�
 
 ## その他
 ---
-学割や環境構築についても説明を入れる予定です。
-ただし、Surfaceでは本格的な環境構築の必要性は薄いと思います。
-最低でも10GB以上の空きが必要とされるのが主な理由です。
+### スマホアプリ
+GitHubにはスマホアプリがあります。<br>
+もちろん具体的な開発を行うのはPC上となりますが、スマホでissueやプルリクエストの議論ができるというのは非常に便利です。<br>
+外出中など、ちょっとした隙間時間にぜひ使ってみてはどうでしょうか。<br><br><br>
 
-【要加筆】<br><br><br><br>
-
-
-## 通知について
----
-初期設定時、GitHubの通知は非常に多いです。
+### 通知について
+初期設定時、GitHubの通知は非常に多いです。<br>
 
 【メモ・要加筆】<br>
-ただし、通知そのものは必要。<br>
-Line等で知らせる必要のないように、issueやプルリクエストに気づける通知設定に。<br>
-Gmail設定がおすすめ(スマホで気づけるため)。<br>
+必要な通知だけ受け取るように設定しましょう。<br>
+スマホで気づけるため、GitHubスマホアプリ、Gmailなどがおすすめ。<br><br><br>
 
+### 学割
+学割について記述する予定です。<br>
+【要加筆】<br><br><br>
+
+### 環境構築
+
+私は本格的な環境構築の必要性は薄いと思います。<br>
+(ただしVSCodeだけは入れてほしい)<br>
+全生徒の所持するSurfaceには、環境を構築できるほどの容量がないというのが主な理由です。<br>
+【要加筆】<br><br><br><br>
 
 
 ## 補足
