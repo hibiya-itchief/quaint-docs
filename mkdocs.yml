@@ -23,15 +23,13 @@ nav:
       - "来校者の入校処理とは": entry/about.md
   - "開発者向け":
       - "はじめに": developer/index.md
-      - "githubの使い方": developer/github.md
+      - "GitHubの使い方": developer/github.md
       - "APIドキュメント": developer/swagger-ui.md
       - "システムの詳細(開発者向け)": developer/system-dev.md
-      - "javascript/typescript": developer/js-ts.md
-      - "nuxt.js": developer/nuxt-js.md
-      - "vue.js": developer/vue-js.md
-      - "vuetify": developer/vuetify.md
+      - "JavaScript/TypeScript": developer/js-ts.md
+      - "Vue.jsなど": developer/vue-js.md
       - "FastAPI": developer/fast-api.md
-      - "その他": developer/php-my-admin.md
+      - "データベース": developer/database.md
 
   - "昨年度IT委員会勉強会資料":
       - "もくじ": studybook/index.md
