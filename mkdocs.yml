@@ -19,6 +19,7 @@ nav:
       - "ユーザーの権限": detail/role.md
   - "クラ代・団体代表者向け":
       - "団体情報の編集": owner/manage_group.md
+      - "映像配信": owner/video_stream.md
   - "チーフ会入校処理担当者向け":
       - "来校者の入校処理とは": entry/about.md
   - "開発者向け":
