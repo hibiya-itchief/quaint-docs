@@ -1,36 +1,70 @@
-site_name: 星陵祭オンライン整理券
+site_name: 星陵祭オンライン整理券制度Wiki
+
 theme:
   language: ja
   name: material
   palette:
     scheme: default
-    primary: light blue
+    primary: grey
     accent: indigo
   font:
     text: Noto Sans JP
     code: Roboto Mono
   logo: assets/logo.png
+  features:
+      - navigation.tabs
+      #  - tabs
+      - navigation.top
 
+#hide:
+#  - navigation
+
+extra:
+  generator: false
+  
 nav:
   - "当システムの使い方": index.md
+
   - "当システムについて詳しく":
       - "制作背景": detail/history.md
       - "システムの詳細": detail/system.md
       - "ユーザーの権限": detail/role.md
+  
   - "クラ代・団体代表者向け":
       - "団体情報の編集": owner/manage_group.md
       - "映像配信": owner/video_stream.md
+  
   - "チーフ会入校処理担当者向け":
       - "来校者の入校処理とは": entry/about.md
+  
   - "開発者向け":
       - "はじめに": developer/index.md
-      - "GitHubの使い方": developer/github.md
+      - "QUAINTの仕組み": developer/quaint.md
+      - "GitHub": developer/github.md
       - "APIドキュメント": developer/swagger-ui.md
-      - "システムの詳細(開発者向け)": developer/system-dev.md
-      - "JavaScript/TypeScript": developer/js-ts.md
-      - "Vue.jsなど": developer/vue-js.md
-      - "FastAPI": developer/fast-api.md
+      - "": dummy.md
+      - "フロントエンド(quaint-app)":
+          - "Codespace": developer/front/codespace.md
+          - "ソースコードがサイトになる原理": developer/front/release.md
+          - "権限": developer/front/role.md
+          - "拡張子`.vue`のファイル": developer/front/vue.md
+          - "各ファイルの解説":
+              - "index.vue": developer/front/ex/home.md
+              - "ご案内ページまとめ": developer/front/ex/info.md
+              - "/groups/index.vue": developer/front/ex/groups.md
+              - "layouts/default.vue": developer/front/ex/default.md
+              - "components/??": developer/front/ex/components.md
+              - "nuxtconfig.ts": developer/front/ex/nuxtconfig.md      
+      - "": dummy.md
+      - "バックエンド(quaint-api)": developer/back.md
       - "データベース": developer/database.md
+      - "": dummy.md
+      - "サーバー管理":
+          - "Cloudflare": developer/server/cloudflare.md
+          - "Microsoft Azure?": developer/server/azure.md
+      - "": dummy.md
+      - "Wiki管理(quaint-docs)": developer/wiki.md
+      
 
   - "昨年度IT委員会勉強会資料":
       - "もくじ": studybook/index.md
@@ -42,4 +76,12 @@ nav:
   - "もどる": https://seiryofes.com
 
 
+markdown_extensions:
+    - admonition
+    - pymdownx.details
+    - pymdownx.superfences
 
+extra_css:
+    - design.css
+
+copyright: 'Copyright © 1922 - 2023 - 後で書く.'
