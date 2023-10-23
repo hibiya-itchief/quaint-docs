@@ -1,19 +1,35 @@
-# 拡張子`.vue`のファイル
-【現在加筆中】
+# 拡張子vueのファイルについて(仮)
 
 
+## ディレクトリ位置による違い
+vueファイルは、pagesフォルダ配下、layoutフォルダ配下、componentsフォルダ配下に配置します。
 
-.vueファイルの扱い方
+pagesフォルダ配下のものは、seiryofes.comの各ページの中身にあたります。  
+layoutsフォルダ配下のものは、seiryofes.comのどのページでも表示されうるもの、例えば左上のハンバーガーメニューや(layouts/default.vue)、存在しないURLに飛んだ時の画面など(layouts/error.vue)です。  
+componentsフォルダ内には、どのページでも使える自作componentを記述したものを入れます。[2023年度](https://2023.seiryofes.com/)においてはあまり使いませんでしたが、もっと積極的に使うべきものです。  
+  
+このページでは基本的に、pagesフォルダ、layoutsフォルダ配下のvueファイルを想定しています。
 
-拡張子がve
-`.vue`ファイルでは、具体的なページ画面を設定します。
-`layouts`フォルダ内のものは現在開いているページに関わらず表示されうるページ画面について、
-`pages`フォルダ内のものは具体的なURLで開けるようなページについて、
-`components`フォルダ内のものは繰り返し用いられる部品を作成しています。
 
-前提として
-quaint-appレポジトリの話
-``` vue
+## Vueとは何か
+
+> Vue (発音は /vjuː/、view と同様) は、ユーザーインターフェースの構築のための JavaScript フレームワークです。標準的な HTML、CSS、JavaScript を土台とする、コンポーネントベースの宣言的なプログラミングモデルを提供します。シンプルなものから複雑なものまで、ユーザーインターフェースの開発を効率的に支えるフレームワークです。  
+> [Vue 3の公式ドキュメント](https://ja.vuejs.org/guide/introduction.html#what-is-vue)より  
+
+QUAINT のフロントエンドで用いている JavaScript のフレームワークです。正式名称は Vue.js です。  
+
+バージョンは Vue 2 です。そのため Vue 3 の書き方とは異なる部分が多々ありますので注意してください。  
+
+ちなみに Vue.**js** の **js** とは、**J**ava**S**cript の略です。  
+ただし、QUAINT では JavaScript ではなく TypeScript を主に用いています。  
+詳しくは：[scriptについて詳しく](#script)
+
+
+## vueファイルの構造
+
+vueファイルの大まかな構造は次のようになっています。
+
+``` vue linenums="1"
 
 <template>
     <!--
@@ -34,37 +50,85 @@ quaint-appレポジトリの話
 
 ```
 
-`.vue`ファイルは大きくこの3つで構成されています。
+大きく分けると、以下の3つのセクションで構成されます。
 
-`<template>`では、画面そのものを設定します。
-!!! note "例"
-    この位置にボタンを設置。この位置にテキストボックスを設置。
-`HTML`と`Vuetify 2`を使って記述しています。
-`Vuetify`とは、`Vue.js`のUIライブラリです。マテリアルデザインを重視したUIが簡単に実現できます。
+### 1. template
+`<template>`では、componentを用いて画面そのものを設定します。  
+componentとは、画面上のボタンや検索バーなど、画面の構成部品のことです。  
+例えば、この位置にボタンを設置し、この位置に検索バーを設置する、といったことを行います。  
+HTML と Vue.js の独自の書き方、および Vuetify を使って記述します。  
+[templateについて詳しく](#template)
 
-`<script>`では、表示される画面の裏で動く処理を記述します。
-!!! note "例"
-    `<template>`のボタン1が押されたとき、`<script>`の処理1を行うように。
+### 2. script
+`<script>`では、表示される画面の裏で動く処理、いわばページを「動かす」ための記述をします。  
+例えば、`<template>`のボタン1が押されたとき、`<script>`の処理1を行うようにする、といったことを行います。  
+JavaScript の拡張版である TypeScript を基本として、Vue.js や Nuxt.js の独自の書き方も用いて記述します。  
+[scriptについて詳しく](#script)
 
-`JavaScript`の拡張版である`TypeScript`を基本として、`Vue.js`や`Nuxt.js`の独自の書き方も用いて記述します。
+### 3. style
+`<style>`では、画面のデザインを調整します。  
+例えば、この文章を中央寄せにして、この文章の色を赤色にする、といったことを行います。  
+CSS で記述します。これら3つの中では最も単純だと思います。  
+[styleについて詳しく](#style)
 
-`<style>`では、画面のデザインを調整します。
-??? note "例"
-    この文章を中央寄せに。この文章の色を赤色に。
-[2023年度](2023.seiryofes.com)においては、トップページ・ご案内ページなどに多く用いられています。対し、団体一覧ページなどのオンライン整理券に関わるページは`<style>`を用いずに、`Vuetify`のデザインそのままで作られているものが多いです。来年度以降は、わかりやすさをそのままに、これらのページでも`<style>`を使用していきたいと思っています。
-`CSS`で記述します。これら3つの中では最も簡単に扱えると思います。
-
-`<template>`の説明
-
-`HTML`と`Vuetify`を使って記述する、と書きました。
-そもそもHTMLとは、
-また、`Vuetify`とは、
-
-この`<template>`は最終的に完全に`HTML`のファイルに変換されます。
+<br><br>
+また、開発環境での動作チェックその他もろもろを担っているのが Node.js です。  
+詳しくは【工事中】別ページ
 
 
-基本的な書き方は、
-```vue:template構造例.vue
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+## templateについて詳しく
+
+> HTML と Vue.js の独自の書き方、および Vuetify を使って記述します。
+
+そもそも HTML とは、WEBページを作成するための言語のことです。  
+例えば、見出しや段落・表・リンクなどを設定します。  
+詳しくはこちらのリンクをご覧ください：[初心者向けHTML入門](https://saruwakakun.com/html-css/basic/html)  
+  
+では、Vuetify とは何でしょう。  
+
+> Vue の CSSフレームワークの一つです。正式名称は Vuetify.js です。  
+> Vuetify を使うと、CSSファイルを作成せずにレイアウトを整えることができます。とても便利です。  
+> 指定のタグを記述するだけで、デザイン込みのステキなパーツを表示することができます。  
+> なお、デザインは2014年にGoogleが発表したマテリアルデザインというオシャレな概念を元に作成されています。  
+> [Vuetify（ビューティファイ）とは何か？](https://prograshi.com/language/vue-js/how-to-use-vuetify/)より
+
+ドキュメントが充実しています。  
+([ドキュメントのリンク](https://v2.vuetifyjs.com/ja/components/buttons/))  
+
+バージョンは Vuetify 2 です。Vuetify 3 のドキュメントは仕様が違う箇所があるので注意してください。  
+(Vuetify 2 のドキュメントは日本語対応していますが Vuetify 3 は対応していないという違いもあります)  
+
+この`<template>`の記述は、最終的に完全に HTML のファイルに変換されます。
+
+---
+### 具体的な書き方
+
+HTML と同じように、入り子構造で成ります。
+
+``` vue linenums="1"
 <template>
     <v-app>
         <v-container>
@@ -79,125 +143,241 @@ quaint-appレポジトリの話
 </template>
 ```
 
+HTML の書き方についてはこちらのリンクをご覧ください：[初心者向けHTML入門](https://saruwakakun.com/html-css/basic/html)
 
-このように`<hogehoge>`と`</hogehoge>`という一対のタグで囲み、その中に新たな`<hogehoge></hogehoge>`が入るという、いわゆる入り子構造で成ります。各タグ間はインデント(改行をし、左側に空白を設ける)をするのが好ましいとされています。
-また、親・子という表現を用いることがあり、たとえば上の構造例では、`<v-col>`は`<v-row>`に囲まれているため、`<v-row>`の子`component`であるということができます。
+コード全体をはさんでいる`<template>`が、HTML でいう`<html>`のようなものです。Vue 独自の書き方です。  
+!!! warning "注意"
+    `<template>`の中に、また別に`<template>`タグが入ることがあります。詳しくは【工事中】
 
+`<v-hogehoge>`のように、`v-`から始まっているタグは Vuetify のコンポーネントです。  
+また、Vuetify のものは基本的にすべて終了タグを必要とします。ですが実質的に意味をなしていないもの、例えば`<v-spacer>`などのために、`<v-spacer></v-spacer>`のことを  
+`<v-spacer />`と略記することができます。  
+`<br>`なども`<br />`と表記することがあります。  
 
-一番最初の`<v-app>`は必須です。`<v-app>`がないと`Vuetify`は使えません。
+一番最初の`<v-app>`は必須です。`<v-app>`がないと Vuetify は使えません。  
 
-次の`<v-container>`は必須ではありませんが、基本記述すべきだと思われます。`<v-container>`中の内容は、両端に空白が挿入されるため、見やすくなります。対し、どうしても画面端のぎりぎりに何かを置きたい、例えば画面端から色を付けたい場合などは`<v-container>`外に設置することで実現できます。
+次の`<v-container>`は必須ではありませんが、基本記述するものという認識で良いです。
+??? tip "詳しく"  
+    `<v-container>`中の内容は、両端に空白が挿入されるため、見やすくなります。中央寄せもされます。  
+    対し、どうしても画面端のぎりぎりに何かを置きたい場合などは、`<v-container>`外に設置することで実現できます。  
+    [2023年度のトップページ](https://2023.seiryofes.com)の右端まで色をつけている部分がその代表例です。   
 
-`<v-container>`含め`<v-row>`と`<v-col>`は`grid system`を支配するためのものです。
-[LINK] [LINK]
+    しかし、`<v-container>`外に設置しなくても実装できたのではないかと今思っています。検証はまた今度。
 
+`<v-container>`に加え、`<v-row>`や`<v-col>`などがあります。主にこの3つを用いて Vuetify のグリッドを構成します。  
+詳しくはこちら：[Vuetify Grid System](https://comfortdesignlab.github.io/about/vuetify/grid-system)  
 
-<br><br><br><br><br><br><br><br><br><br><br>
+またグリッドについては`<v-spacer>`も有用です。  
+詳しくはこちら：[Grid system](https://v2.vuetifyjs.com/ja/components/grids/#v-spacer)  
 
-
-また、`grid system`的には`margin`や`padding`も大事な要素です。`<template>`の各`component`内や`<style>`内で設定することができます。<br><br><br>
-`<v-spacer>`も
-[LINK]
-
-`<v-hogehoge>`
-
-
-
-
-<br><br><br><br><br><br><br><br><br><br><br>
-
-
-
-
-
-
-
-<v-app>
-
-    みたいので囲う
-    v-appで囲まれてる範囲内でvuetifyコンポーネントが使える
-v-appをはがすことは全くないからOK
-    途中でtemplateが挿入されることがある非常に限定的で詳しくはこのページで
-
-
-grid関係は別枠、
-<v-container
-<v-row
-<v-col
-
-
-あとdivh2あたりの別枠
-
-また、componentsを使える
-
-
-<<aa> aa </aa> の形なこと
-
-
-<span>,inlineなこともかくともしんせつだよね、なんいどとかかnnkeinaku
-
-<!--
-のくだり
--->
-
-省略記法も、< />
-e.g.<br> <br /> <v-divider></v-divider>
-
-mustache
-
-
-v-model
-v-bind
-v-on
-
-classみぎ、全部ダブルクオーテーションがち、
-
-id
-style
-hrefとか:toとか
-nuxtlinkも？それは個別で？
-
-全体の説明：lintfixについて；
-
-
-あと、開発者ツールで各部分が見れる、
+また、少し話は逸れますが、グリッドという点では margin や padding も大事な要素です。  
+詳しくはこちら：[marginやpaddingの調整がめっちゃ楽な件](https://qiita.com/00__/items/d5973c7dc79b95b08739)  
+<br><br>
+コメントアウトの方法は HTML のものと同じです。  
 
 
 
 
-script
 
-script lang="ts"
+---
+### 変数などについて【工事中】
+
+あと、@click="~~"
+のscriptについても。Method呼び出しも。
+
+@clickの説明のためにここでv-bindとv-model
+
+
+ mustache
+{{}}
+[mustache記法](https://johobase.com/vue-js-mustashe-notation/)
+
+ リアクティブ
+
+ v-bind
+
+href :to
+
+ v-model
+
+this.についても
+
+また、特徴として、
+リアクティビティー: Vue は JavaScript の状態の変化を自動的に追跡し、変化が起きると効率的に DOM を更新します。
+https://v2.ja.vuejs.org/v2/guide/
+りアクティビテーのくだりに使えるかもしれないリンク：[これ](https://ja.vuejs.org/guide/introduction.html#the-progressive-framework)
+
+https://mid-works.com/columns/language/javascript/1138064
+
+
+ v-on
+
+[on](https://qiita.com/terufumi1122/items/9af94f1fab17a24d7110)
+
+v-onは正味@clickでしか見ないからOK
+ v-for v-if v-else v-show
+
+[for](https://qiita.com/JetNel0/items/1f618683e4acce5f9aa6)
+[if,else,show](https://qiita.com/aqua_ix/items/61eac355f3c24d7676e1)
+追加で、v-else-ifも使えるよっていう
+
+`<p style="font-weight: bold;">`
+という書き方
+
+
+
+
+## scriptについて詳しく
+
+> JavaScript の拡張版である TypeScript を基本として、Vue.js や Nuxt.js の独自の書き方も用いて記述します。
+
+HTML や CSS がページの見た目を担当するのに対し、JavaScript は、ページを言わば「動かす」ための言語です。
+???+ warning "注意"
+    **Javaは全く別の言語です。**JavaScriptの名は、当時人気であったJavaの名にあやかりこう名付けたそうです。前述のとおり、JSと略されることがあります。
+また、JavaScript の拡張版である TypeScript とは、JavaScript を基本にして、「型( Type )」に厳格にすることでエラーを未然に防ごうという言語です。TSと略されることがあります。
+???+ tip "詳しく"
+    TypeScript では、JavaScript と同じ構文などが使えます。なので、TypeScript 独自の内容以外は、JavaScript と同じ書き方です。  
+    また、TypeScript で記述したコードは、JavaScript で記述されたコードに変換されます。  
+    このことを**コンパイル**と呼びます。  
+    例えば、JavaScript では全ての行の終わりにセミコロン**`;`**を付ける必要がありますが、TypeScript ではコンパイル時に自動で付けてくれるため必要ありません。  
+    公式の[Playground](https://www.typescriptlang.org/ja/play)では、コンパイル前後のコードの違いも見ることができます。  
+    このように、TypeScript は JavaScript と非常に互換性が高い言語です。  
+    型( Type )について、詳しくは【工事中】
+
+JavaScript の書き方については、[MozillaのJavaScriptガイド](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide)に代表されるように、かなり多くの情報がネット上にあります。  
+対して、TypeScript の日本語情報はそれほど多くはありません。  
+その中では、[サバイバルTypeScript](https://typescriptbook.jp/)というサイトの、[読んで学ぶTypeScript](https://typescriptbook.jp/reference)の項の記事群が分かりやすいと思います。
+
+Nuxt.js（ナクスト・ジェイエス）は、Vue.js をベースとして開発された JavaScript フレームワークです。
+
+> Vue.js 自体が JavaScript の View (HTMLファイル) のフレームワークですが、Nuxt.js はその Vue.js ファイルを使ってURLのルーティングや API 処理をはじめとするアプリケーション開発に欠かせない機能の実装を想定した仕様になっており、より開発がしやすくなっています。  
+> [Nuxt.jsとは？](https://techmania.jp/blog/javascript0009/)より
+
+ルーティングやAPI処理などについては後述します。詳しくは【工事中】別ページ    
+とにかく、seiryofes.comをよりよくしてくれるフレームワークという認識で結構です。
+
+
+
+### 具体的な書き方【工事中】
+
+``` vue linenums="1"
+<script lang="ts">
+
+いえあ
+
+</script>
+```
+
+
+
+
 dta data⇨ここでグろーバル、templateでもつかえる　
 Dataで片塩亭なこと、これ
-typescriptの「TYPE・型」の概念書かないとかな…
-後特別にconsole.logについて？
-this
 
-$axios
-createdなど
-
-methods
+`$axios`
 
 
-style
+Typeについて
 
-ただのcss
 
-h2 {
 
-}
-の形式、ぜんぶにセミコロンが必要な感じ
-#aiueo {
-    これid
-}
-.hoge {
-    これclass
-}
-ケバブケースでつなげないとだめ
+・methods
+引数についても、
+
+・createdなど
+
+SSR/CSRへのリンクもとばす
+
+・this.
+v-modelとちょっとからむね
+スコープの話
+前提となるスコープの話：https://typescriptbook.jp/reference/statements/variable-scope
+に加えて、script内ではグローバル関数が呼び出せない、this.をつけて、this.関数名とすることで呼び出せる
+template内では逆にグローバル関数しか呼び出せません
+・console.log
+
+for文　if文
+
+
+
+
+
+
+
+
+
+
+
+nuxtlinkも？それは個別で？
+
+
+
+nuxtについて、SSrとか理解しなきゃ
+https://devlog.grapecity.co.jp/nuxtjs-quickstart/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## styleについて詳しく【工事中】
+
+> CSS で記述します。
+CSS とは、Webページの文字の色や大きさ、背景、配置といったスタイル（見た目）を設定する言語です。  
+詳しくはこちらのリンクをご覧ください：[初心者向けCSS（スタイルシート）入門](https://saruwakakun.com/html-css/basic/css)
+
+また、idやclassの名前はkebab-caseでお願いします。
+snake_case
+camelCase
+
+
 また、@を使うタイプやhoverなどいろいろあるがそれは各ページの解説で。
 ちなみにlintstyleが一番正確で丁寧,cssそのままだからか
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+エラーについてのページ欲しいね；e.g.SyntaxError
+
+
+templteの説明で、例としてなんかあげて、なぜなら`<v-hoge hoge hoge="">`みたいな書き方
+行が湧けられるのはlintfixだよー⇨リンク飛ばす
+, もそう、別にスペース無くてもいいけどそうしてる
+スペース必要な場合もある、感覚で。改行も見やすくするためのやつと
+scriptの場合、;を使えば改行しなくていいよね、あとtemplateのなかでscript記述できるよね
 
 

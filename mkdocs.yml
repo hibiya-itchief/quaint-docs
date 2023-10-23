@@ -8,13 +8,12 @@ theme:
     primary: grey
     accent: indigo
   font:
-    text: Noto Sans JP
-    code: Roboto Mono
+    text: M PLUS 1p
+    code: Source Code Pro
   logo: assets/logo.png
   features:
       - navigation.tabs
       #  - tabs
-      - navigation.top
 
 #hide:
 #  - navigation
@@ -23,9 +22,9 @@ extra:
   generator: false
   
 nav:
-  - "当システムの使い方": index.md
+  - "当システムの使い方【工事中】": index.md
 
-  - "当システムについて詳しく":
+  - "当システムについて詳しく【工事中】":
       - "制作背景": detail/history.md
       - "システムの詳細": detail/system.md
       - "ユーザーの権限": detail/role.md
@@ -34,21 +33,21 @@ nav:
       - "団体情報の編集": owner/manage_group.md
       - "映像配信": owner/video_stream.md
   
-  - "チーフ会入校処理担当者向け":
+  - "チーフ会入校処理担当者向け【工事中】":
       - "来校者の入校処理とは": entry/about.md
   
   - "開発者向け":
-      - "はじめに": developer/index.md
-      - "QUAINTの仕組み": developer/quaint.md
-      - "GitHub": developer/github.md
-      - "APIドキュメント": developer/swagger-ui.md
+      - "はじめに【工事★】": developer/index.md
+      - "QUAINTの仕組み【工事★】": developer/quaint.md
+      - "GitHub(暫定？？)": developer/github.md
+      - "APIドキュメント【工事中？？】": developer/swagger-ui.md
       - "": dummy.md
       - "フロントエンド(quaint-app)":
-          - "Codespace": developer/front/codespace.md
-          - "ソースコードがサイトになる原理": developer/front/release.md
-          - "権限": developer/front/role.md
-          - "拡張子`.vue`のファイル": developer/front/vue.md
-          - "各ファイルの解説":
+          - "Codespace(暫定)": developer/front/codespace.md
+          - "コードがサイトになる原理(仮題)【工事中】": developer/front/release.md
+          - "権限【工事中】": developer/front/role.md
+          - "拡張子vueのファイル": developer/front/vue.md
+          - "各ファイルの解説【工事中】":
               - "index.vue": developer/front/ex/home.md
               - "ご案内ページまとめ": developer/front/ex/info.md
               - "/groups/index.vue": developer/front/ex/groups.md
@@ -56,14 +55,14 @@ nav:
               - "components/??": developer/front/ex/components.md
               - "nuxtconfig.ts": developer/front/ex/nuxtconfig.md      
       - "": dummy.md
-      - "バックエンド(quaint-api)": developer/back.md
-      - "データベース": developer/database.md
+      - "バックエンド(quaint-api)【工事中】": developer/back.md
+      - "データベース【工事中】": developer/database.md
       - "": dummy.md
-      - "サーバー管理":
+      - "サーバー管理【工事中】":
           - "Cloudflare": developer/server/cloudflare.md
-          - "Microsoft Azure?": developer/server/azure.md
+          - "Microsoft Azure": developer/server/azure.md
       - "": dummy.md
-      - "Wiki管理(quaint-docs)": developer/wiki.md
+      - "Wiki管理(quaint-docs)【工事中】": developer/wiki.md
       
 
   - "昨年度IT委員会勉強会資料":
@@ -80,8 +79,14 @@ markdown_extensions:
     - admonition
     - pymdownx.details
     - pymdownx.superfences
+    - pymdownx.highlight
+
+extra_javascript:
+    - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js
+    - javascripts/config.js
 
 extra_css:
+    - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css
     - design.css
 
-copyright: 'Copyright © 1922 - 2023 - 後で書く.'
+copyright: 'Copyright © 2006 - 2023 - 後で書く.'

@@ -1,7 +1,6 @@
-# GitHubの使い方
+# GitHubの使い方(暫定)
 星陵祭オンライン整理券システムでは、GitHubというweb上のサービスを使って開発を行います。<br>
 
-中央寄せ！！！！！！！！！！！
 ![画像](images/github-1.png)
 
 ## GitHubとは
