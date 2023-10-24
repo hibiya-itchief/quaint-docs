@@ -1,24 +1,3 @@
-# `JavaScript` / `TypeScript`
-
-臨時的に[このリンク先](https://hibiya-itchief.github.io/quaint-docs/developer/fortraining/)でフロントエンド開発の解説を行っています。
-
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-**`JavaScript`**とは、ブラウザを動かすための言語です。<br>
-**`HTML`**だけでは用意された文字や画像がそこにあるだけですが、それが具体的に「動作」するようになるのは **`JavaScript`** のおかげです。<br>
-**`Java`とは違う言語です。**<br>
-<br>
-
-**`TypeScript`**とは、【要加筆】。<br>
-ただし、あまり細かいことは気にせずに「そういう言語があるんだ」ぐらいの気持ちで良いと思います。<br>
-
-[Vue.js](https://hibiya-itchief.github.io/quaint-docs/developer/vue-js/#script)の **`.vue`** ファイルの `<script>`が **`TypeScript`** で書かれています。<br>
-<br>
-
-**`TypeScript`**は参考にできるサイトが多いです。
-[これ](https://typescriptbook.jp/overview)や[これ](https://typescript-jp.gitbook.io/deep-dive/getting-started)などが参考になると思います(基本的に文法に関わるところだけで構いません)。<br>
 
 【メモ・要加筆】
 でも0から学ぶのも大変ですから、<br>
@@ -27,14 +6,6 @@
 最初は分からないものだらけで大変だと思いますが、<br>
 一つのソースコードを例にしてそのすべてを説明すれば他のソースコードの労力はかなり少なくなるのではないか、と思っています。いつか作る予定です。<br>
 <br>
-
-最小限のコードを書いて『それがどのように動くのか』確認したい場合には、<br>
-公式Playground(いわばプチ開発環境)の[英語版](https://www.typescriptlang.org/play)か[日本語版](https://www.typescriptlang.org/ja/play)を使うのがよいです。
-<br><br><br><br>
-
-【以降要加筆】
-<br><br><br><br>
-<br><br><br><br>
 ### console.log
 console.log()とは
 開発者ツール内のコンソールにログを出す操作です。
@@ -53,13 +24,6 @@ hoge
 ## localStorage
 getなど
 
-
-
-
-
-
-## this
-グローバル関数とローカル関数という認識
 
 
 
@@ -90,16 +54,3 @@ methods: {
 `Function3`のみ`return`より先に`console.log('aiueo');`があるためです。<br>
 
 
-
-### axios
-
-Node.jsとのコラボ<br>
-async/awaitはJS、だけど$axois.$get等はnode.jsです<br>
-Nodeの方に書く？<br>
-methodもそうする？<gr>
-
-APIからもらってくるデータは`object`型。<br><br><br><br>
-
-## 補足
-
-<br><br><br><br>

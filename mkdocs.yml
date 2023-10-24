@@ -1,12 +1,12 @@
-site_name: 星陵祭オンライン整理券制度Wiki
+site_name: 星陵祭オンライン整理券Wiki
 
 theme:
   language: ja
   name: material
   palette:
     scheme: default
-    primary: grey
-    accent: indigo
+    primary: blue
+    accent: pink
   font:
     text: M PLUS 1p
     code: Source Code Pro
@@ -22,9 +22,9 @@ extra:
   generator: false
   
 nav:
-  - "当システムの使い方【工事中】": index.md
+  - "当システムの使い方": index.md
 
-  - "当システムについて詳しく【工事中】":
+  - "当システムについて詳しく":
       - "制作背景": detail/history.md
       - "システムの詳細": detail/system.md
       - "ユーザーの権限": detail/role.md
@@ -33,27 +33,28 @@ nav:
       - "団体情報の編集": owner/manage_group.md
       - "映像配信": owner/video_stream.md
   
-  - "チーフ会入校処理担当者向け【工事中】":
+  - "チーフ会入校処理担当者向け":
       - "来校者の入校処理とは": entry/about.md
   
   - "開発者向け":
       - "はじめに【工事★】": developer/index.md
-      - "QUAINTの仕組み【工事★】": developer/quaint.md
+      - "QUAINTの構造(暫定)": developer/quaint.md
       - "GitHub(暫定？？)": developer/github.md
-      - "APIドキュメント【工事中？？】": developer/swagger-ui.md
+      - "APIドキュメント【工事中】": developer/swagger-ui.md
       - "": dummy.md
       - "フロントエンド(quaint-app)":
           - "Codespace(暫定)": developer/front/codespace.md
-          - "コードがサイトになる原理(仮題)【工事中】": developer/front/release.md
-          - "権限【工事中】": developer/front/role.md
-          - "拡張子vueのファイル": developer/front/vue.md
-          - "各ファイルの解説【工事中】":
-              - "index.vue": developer/front/ex/home.md
-              - "ご案内ページまとめ": developer/front/ex/info.md
-              - "/groups/index.vue": developer/front/ex/groups.md
-              - "layouts/default.vue": developer/front/ex/default.md
-              - "components/??": developer/front/ex/components.md
-              - "nuxtconfig.ts": developer/front/ex/nuxtconfig.md      
+          - "権限一覧【工事中】 ": developer/front/role.md
+          - "Vueとは何か": developer/front/vue.md
+          - "Nuxtについて詳しく": developer/front/nuxt.md
+          - "その他【工事中】": developer/front/etc.md
+#          - "各ファイルの解説【工事中】":
+#              - "index.vue": developer/front/ex/home.md
+#              - "ご案内ページまとめ": developer/front/ex/info.md
+#              - "/groups/index.vue": developer/front/ex/groups.md
+#              - "layouts/default.vue": developer/front/ex/default.md
+#              - "components/??": developer/front/ex/components.md
+#              - "nuxtconfig.ts": developer/front/ex/nuxtconfig.md      
       - "": dummy.md
       - "バックエンド(quaint-api)【工事中】": developer/back.md
       - "データベース【工事中】": developer/database.md

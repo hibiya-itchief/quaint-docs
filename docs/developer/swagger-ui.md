@@ -1,29 +1,30 @@
-# APIドキュメント (Swagger UI)の使い方
-
-
-
-これ春休みから持ってきたやつだ！！！わーーい
-
+# APIドキュメント (Swagger UI)
 
 ## APIドキュメント (Swagger UI)とは
-Swagger UIは、APIのテストと仕様の文書化のためのツールです。
 
-Web APIを呼び出して実行するには本来、以下の画像のようにターミナルという黒い画面からよくわからないコマンドをたたいて...とちょっとめんどくさいのですが、
+Swagger UIとは、APIのテストと仕様の文書化のためのツールです。  
 
-![ターミナルからAPIを実行する例](api_request_with_terminal.png)
+Web APIを呼び出して実行するには本来、このように「ターミナル」という黒い画面からよくわからないコマンドをたたく必要があったのですが、
+
+![ターミナルからAPIを実行する例](images/swagger-ui_terminal.png)
 
 同じAPIの呼び出しがこのようにGUIで分かりやすく簡単にできます。
-![Swagger UIでAPIを実行する例](api_request_with_swaggerui.png)
 
-また複数人で開発する際には、開発者間でAPIの仕様や使い方を共有する必要があります。しかし、コンピュータ向けのAPIのプログラムを書いたうえで、さらに人間用に使い方のドキュメントも書かなければいけないのは大変ですよね。
+![Swagger UIでAPIを実行する例](images/swagger-ui_ui.png)
 
-星陵祭オンライン整理券システムで採用しているFastAPIは、ソースコードを書くと、Swagger UIのドキュメントを自動で生成してくれます！すごいですね
+また複数人で開発する際には、開発者間でAPIの仕様や使い方を共有する必要があります。  
+しかし、コンピュータ向けのAPIのプログラムを書いたうえで、さらに人間用に使い方のドキュメントも書かなければいけないのは大変ですよね。
+
+星陵祭オンライン整理券システムで採用しているFastAPIは、ソースコードを書くと、Swagger UIのドキュメントを自動で生成してくれます！すごいですね！！
+
 ## APIドキュメントへのアクセス
 
 「(APIサーバーのURL)/docs」でアクセスできます。
 
-本番環境のAPI: [https://api.seiryofes.com/docs](https://api.seiryofes.com/docs)
+本番環境のAPI: おいおい書くのマズいだろということで、いやもう手遅れと言えば手遅れなんだけどさ…
 
-検証環境のAPI: [https://api-dev.seiryofes.com/docs](https://api-dev.seiryofes.com/docs)
+検証環境のAPI: https://hogehoge
 
-## 
+## APIドキュメントの使い方
+
+画像付きで解説する予定.

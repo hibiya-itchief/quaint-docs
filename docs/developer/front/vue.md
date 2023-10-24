@@ -1,15 +1,4 @@
-# 拡張子vueのファイルについて(仮)
-
-
-## ディレクトリ位置による違い
-vueファイルは、pagesフォルダ配下、layoutフォルダ配下、componentsフォルダ配下に配置します。
-
-pagesフォルダ配下のものは、seiryofes.comの各ページの中身にあたります。  
-layoutsフォルダ配下のものは、seiryofes.comのどのページでも表示されうるもの、例えば左上のハンバーガーメニューや(layouts/default.vue)、存在しないURLに飛んだ時の画面など(layouts/error.vue)です。  
-componentsフォルダ内には、どのページでも使える自作componentを記述したものを入れます。[2023年度](https://2023.seiryofes.com/)においてはあまり使いませんでしたが、もっと積極的に使うべきものです。  
-  
-このページでは基本的に、pagesフォルダ、layoutsフォルダ配下のvueファイルを想定しています。
-
+# Vueとは何か
 
 ## Vueとは何か
 
@@ -23,6 +12,24 @@ QUAINT のフロントエンドで用いている JavaScript のフレームワ�
 ちなみに Vue.**js** の **js** とは、**J**ava**S**cript の略です。  
 ただし、QUAINT では JavaScript ではなく TypeScript を主に用いています。  
 詳しくは：[scriptについて詳しく](#script)
+
+quaint-appレポジトリは、そのlanguageの9割以上をVueが占めているように、  
+Vueのファイルである`.vue`ファイルが基本となっています。  
+このページでも、vueファイルについてを主に記述します。
+
+## ディレクトリ位置による違い
+vueファイルは、pagesフォルダ配下、layoutフォルダ配下、componentsフォルダ配下に配置します。
+
+pagesフォルダ配下のものは、seiryofes.comの各ページの中身にあたります。  
+詳しくは：[ルーティング](nuxt.md/#_1)  
+ 
+layoutsフォルダ配下のものは、seiryofes.comのどのページでも表示されうるもの、例えば左上のハンバーガーメニューや(layouts/default.vue)、存在しないURLに飛んだ時の画面など(layouts/error.vue)です。  
+詳しくは：[fallbackについて](nuxt.md/#fallback)  
+
+componentsフォルダ内には、どのページでも使える自作componentを記述したものを入れます。[2023年度](https://2023.seiryofes.com/)においてはあまり使いませんでしたが、もっと積極的に使うべきものです。  
+  
+このページでは基本的に、pagesフォルダ、layoutsフォルダ配下のvueファイルを想定しています。
+
 
 
 ## vueファイルの構造
@@ -52,51 +59,31 @@ vueファイルの大まかな構造は次のようになっています。
 
 大きく分けると、以下の3つのセクションで構成されます。
 
-### 1. template
+<h3>template</h3>
+
 `<template>`では、componentを用いて画面そのものを設定します。  
 componentとは、画面上のボタンや検索バーなど、画面の構成部品のことです。  
 例えば、この位置にボタンを設置し、この位置に検索バーを設置する、といったことを行います。  
 HTML と Vue.js の独自の書き方、および Vuetify を使って記述します。  
 [templateについて詳しく](#template)
 
-### 2. script
+<h3>script</h3>
 `<script>`では、表示される画面の裏で動く処理、いわばページを「動かす」ための記述をします。  
+
 例えば、`<template>`のボタン1が押されたとき、`<script>`の処理1を行うようにする、といったことを行います。  
 JavaScript の拡張版である TypeScript を基本として、Vue.js や Nuxt.js の独自の書き方も用いて記述します。  
 [scriptについて詳しく](#script)
 
-### 3. style
+<h3>style</h3>
+
 `<style>`では、画面のデザインを調整します。  
 例えば、この文章を中央寄せにして、この文章の色を赤色にする、といったことを行います。  
 CSS で記述します。これら3つの中では最も単純だと思います。  
 [styleについて詳しく](#style)
 
 <br><br>
-また、開発環境での動作チェックその他もろもろを担っているのが Node.js です。  
-詳しくは【工事中】別ページ
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+また、Node.js という言わば「JavaScriptの実行環境」がありますが、開発する上ではあまり気にしなくて結構です。  
+詳しくは省きます。
 
 ---
 ## templateについて詳しく
@@ -105,7 +92,7 @@ CSS で記述します。これら3つの中では最も単純だと思います
 
 そもそも HTML とは、WEBページを作成するための言語のことです。  
 例えば、見出しや段落・表・リンクなどを設定します。  
-詳しくはこちらのリンクをご覧ください：[初心者向けHTML入門](https://saruwakakun.com/html-css/basic/html)  
+詳しくはこちら：[初心者向けHTML入門](https://saruwakakun.com/html-css/basic/html)  
   
 では、Vuetify とは何でしょう。  
 
@@ -143,13 +130,14 @@ HTML と同じように、入り子構造で成ります。
 </template>
 ```
 
-HTML の書き方についてはこちらのリンクをご覧ください：[初心者向けHTML入門](https://saruwakakun.com/html-css/basic/html)
+HTML の書き方についてはこちら：[初心者向けHTML入門](https://saruwakakun.com/html-css/basic/html)
 
 コード全体をはさんでいる`<template>`が、HTML でいう`<html>`のようなものです。Vue 独自の書き方です。  
 !!! warning "注意"
-    `<template>`の中に、また別に`<template>`タグが入ることがあります。詳しくは【工事中】
+    状況は限られていますが、`<template>`の中に、また別に`<template>`タグが入ることがあります。詳しくは【工事中】
 
 `<v-hogehoge>`のように、`v-`から始まっているタグは Vuetify のコンポーネントです。  
+
 また、Vuetify のものは基本的にすべて終了タグを必要とします。ですが実質的に意味をなしていないもの、例えば`<v-spacer>`などのために、`<v-spacer></v-spacer>`のことを  
 `<v-spacer />`と略記することができます。  
 `<br>`なども`<br />`と表記することがあります。  
@@ -162,7 +150,7 @@ HTML の書き方についてはこちらのリンクをご覧ください：[�
     対し、どうしても画面端のぎりぎりに何かを置きたい場合などは、`<v-container>`外に設置することで実現できます。  
     [2023年度のトップページ](https://2023.seiryofes.com)の右端まで色をつけている部分がその代表例です。   
 
-    しかし、`<v-container>`外に設置しなくても実装できたのではないかと今思っています。検証はまた今度。
+    しかし、`<v-container>`外に設置しなくても実装できたのではないかと今思っています。検証はまた今度。【工事中】
 
 `<v-container>`に加え、`<v-row>`や`<v-col>`などがあります。主にこの3つを用いて Vuetify のグリッドを構成します。  
 詳しくはこちら：[Vuetify Grid System](https://comfortdesignlab.github.io/about/vuetify/grid-system)  
@@ -175,57 +163,76 @@ HTML の書き方についてはこちらのリンクをご覧ください：[�
 <br><br>
 コメントアウトの方法は HTML のものと同じです。  
 
-
-
+具体的な書き方は既存のvueファイルを見て学ぶのが良いと思います。
 
 
 ---
-### 変数などについて【工事中】
+### その他のcomponent
 
-あと、@click="~~"
-のscriptについても。Method呼び出しも。
+<h4>NuxtLink</h4>
 
-@clickの説明のためにここでv-bindとv-model
+詳しくは【工事中】
 
+<h4>client-only</h4>
 
- mustache
-{{}}
-[mustache記法](https://johobase.com/vue-js-mustashe-notation/)
+詳しくは【工事中】
 
- リアクティブ
+---
+### 変数について
 
- v-bind
+Vue では、データが更新されたときに自動で表示を更新します。  
+(この表示のことをDOMと呼び、このことをリアクティブであると表現することがあります。)  
 
-href :to
+つまり、`<template>`と`<script>`の間で変数は共有されているということになります。  
 
- v-model
+ただし、ある意味当然ですが、`<template>`ではグローバル変数しか用いることができません。  
+詳しくは：[scriptの方のやつ！！]()【工事中】
 
-this.についても
+具体的に変数を用いるには、Mustache記法や`v-bind`等があります。  
+Mustache記法について詳しくはこちら：[Mustashe（マスタッシュ）記法](https://johobase.com/vue-js-mustashe-notation/)  
+`v-bind`等については次の[ディレクティブ](#_4)の項で説明します。
 
-また、特徴として、
-リアクティビティー: Vue は JavaScript の状態の変化を自動的に追跡し、変化が起きると効率的に DOM を更新します。
-https://v2.ja.vuejs.org/v2/guide/
-りアクティビテーのくだりに使えるかもしれないリンク：[これ](https://ja.vuejs.org/guide/introduction.html#the-progressive-framework)
+---
+### ディレクティブ
 
-https://mid-works.com/columns/language/javascript/1138064
+ディレクティブについて：[主要なディレクティブ一覧](https://qiita.com/y-suzu/items/9b84da0a3a9ee4a5686b)  
 
+いくつか補足します。
 
- v-on
+<h4>v-ifとv-show</h4>
 
-[on](https://qiita.com/terufumi1122/items/9af94f1fab17a24d7110)
+seiryofes.comでは`v-show`の方が多く用いられています。  
+詳しくはこちら：[Vue.jsのv-ifとv-showの違い](https://qiita.com/aqua_ix/items/61eac355f3c24d7676e1)  
+[条件付きレンダリング](https://v2.ja.vuejs.org/v2/guide/conditional)
 
-v-onは正味@clickでしか見ないからOK
- v-for v-if v-else v-show
+<h4>v-for</h4>
 
-[for](https://qiita.com/JetNel0/items/1f618683e4acce5f9aa6)
-[if,else,show](https://qiita.com/aqua_ix/items/61eac355f3c24d7676e1)
-追加で、v-else-ifも使えるよっていう
+`v-for`を使う際は、必ず`:key="hogehoge"`も併記してください。  
+この`hogehoge`には、例えば`v-for="item in items"`の場合は`:key="item.id"`のように、配列の各要素によって異なるものを指定する必要があります。  
+詳しくはこちら：[key属性をつけ忘れないようにする](https://note.com/shift_tech/n/nbcae6c4ab442)
 
-`<p style="font-weight: bold;">`
-という書き方
+<h4>v-on</h4>
 
+seiryofes.comでは`@click`で使用することが多いです。  
+また、`@click.prevent`および`@click.stop`について、詳しくは【工事中】
 
+<h4>v-model</h4>
 
+> 双方向データバインディング
+
+とは要するに、変数を`<script>`からも`<template>`からも更新できるということです。  
+
+例えば、検索窓(`<v-text-field>`)で`v-model="hogehoge"`とすれば、検索窓の入力内容はそのまま変数`hogehoge`の値になり、`<script>`から`hogehoge`の値を変更すると検索窓の入力内容も変更される、といった具合です。  
+
+また、`v-model="hogehoge"`の`hogehoge`がboolean型の場合、ふつうそれは「`hogehoge`がtrueのとき表示する」を意味します。  
+この手法は`<v-snackbar>`や`<v-dialog>`で多く用いられています。  
+
+<h4>v-bind</h4>
+
+あまり難しく考えない方がよいです。  
+
+例えば、`<NuxtLink to="/groups">`を押せば、[団体一覧のページ](https://2023.seiryofes.com/groups)に飛ぶことしかできません。  
+ですが、これを`<NuxtLink v-bind:to="hogehoge">`とすると、`<script>`で`hogehoge`の値を`"/groups"`だとか`"/map"`だとかにすることで簡単にリンク先を変更できます。  
 
 ## scriptについて詳しく
 
@@ -233,15 +240,15 @@ v-onは正味@clickでしか見ないからOK
 
 HTML や CSS がページの見た目を担当するのに対し、JavaScript は、ページを言わば「動かす」ための言語です。
 ???+ warning "注意"
-    **Javaは全く別の言語です。**JavaScriptの名は、当時人気であったJavaの名にあやかりこう名付けたそうです。前述のとおり、JSと略されることがあります。
+    **Javaは全く別の言語です。**JavaScriptの名は、当時人気であったJavaの名にあやかりこう名付けたそうです。  
+    前述のとおり、JSと略されることがあります。  
 また、JavaScript の拡張版である TypeScript とは、JavaScript を基本にして、「型( Type )」に厳格にすることでエラーを未然に防ごうという言語です。TSと略されることがあります。
 ???+ tip "詳しく"
-    TypeScript では、JavaScript と同じ構文などが使えます。なので、TypeScript 独自の内容以外は、JavaScript と同じ書き方です。  
+    TypeScript では、JavaScript と同じ構文などが使えます。なので、TypeScript 独自の内容以外は、JavaScript と同じと考えても良いと思います。  
     また、TypeScript で記述したコードは、JavaScript で記述されたコードに変換されます。  
     このことを**コンパイル**と呼びます。  
     例えば、JavaScript では全ての行の終わりにセミコロン**`;`**を付ける必要がありますが、TypeScript ではコンパイル時に自動で付けてくれるため必要ありません。  
     公式の[Playground](https://www.typescriptlang.org/ja/play)では、コンパイル前後のコードの違いも見ることができます。  
-    このように、TypeScript は JavaScript と非常に互換性が高い言語です。  
     型( Type )について、詳しくは【工事中】
 
 JavaScript の書き方については、[MozillaのJavaScriptガイド](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide)に代表されるように、かなり多くの情報がネット上にあります。  
@@ -253,11 +260,12 @@ Nuxt.js（ナクスト・ジェイエス）は、Vue.js をベースとして開
 > Vue.js 自体が JavaScript の View (HTMLファイル) のフレームワークですが、Nuxt.js はその Vue.js ファイルを使ってURLのルーティングや API 処理をはじめとするアプリケーション開発に欠かせない機能の実装を想定した仕様になっており、より開発がしやすくなっています。  
 > [Nuxt.jsとは？](https://techmania.jp/blog/javascript0009/)より
 
-ルーティングやAPI処理などについては後述します。詳しくは【工事中】別ページ    
+詳しくは：[Nuxtについて詳しく](nuxt.md)    
+
 とにかく、seiryofes.comをよりよくしてくれるフレームワークという認識で結構です。
 
 
-
+---
 ### 具体的な書き方【工事中】
 
 ``` vue linenums="1"
@@ -272,21 +280,40 @@ Nuxt.js（ナクスト・ジェイエス）は、Vue.js をベースとして開
 
 
 dta data⇨ここでグろーバル、templateでもつかえる　
-Dataで片塩亭なこと、これ
+Dataでtype指定なこと、これ
 
 `$axios`
 
+
+``` vue linenums="1"
+
+this.$axios.get???
+
+
+```
+
+
+<h4>createdなど</h4>
+
+
+
+
+SSR/CSRへのリンクもとばす、絡むんだよなあ・・・・
+
+
+また、兄弟的な立ち位置の`mounted`などについても同様です？？嘘だろ
 
 Typeについて
 
 
 
-・methods
+<h4>methods</h4>
 引数についても、
 
-・createdなど
+リンク張るだけでもいいと思うけど、追加で、
+`@click="HogeHoge()`
+についても記述。また
 
-SSR/CSRへのリンクもとばす
 
 ・this.
 v-modelとちょっとからむね
@@ -294,18 +321,10 @@ v-modelとちょっとからむね
 前提となるスコープの話：https://typescriptbook.jp/reference/statements/variable-scope
 に加えて、script内ではグローバル関数が呼び出せない、this.をつけて、this.関数名とすることで呼び出せる
 template内では逆にグローバル関数しか呼び出せません
+
 ・console.log
 
 for文　if文
-
-
-
-
-
-
-
-
-
 
 
 nuxtlinkも？それは個別で？
@@ -320,6 +339,14 @@ https://devlog.grapecity.co.jp/nuxtjs-quickstart/
 
 
 
+SSRのくだりに使えるかもしれないリンク：[これ](https://ja.vuejs.org/guide/introduction.html#the-progressive-framework)
+
+https://mid-works.com/columns/language/javascript/1138064
+
+
+### templateと絡む内容(仮題)
+
+e.g.thisもそうだし、`@click`の中でscriptの記述ができること
 
 
 
@@ -341,43 +368,70 @@ https://devlog.grapecity.co.jp/nuxtjs-quickstart/
 
 
 
-## styleについて詳しく【工事中】
+## styleについて詳しく
 
 > CSS で記述します。
+
 CSS とは、Webページの文字の色や大きさ、背景、配置といったスタイル（見た目）を設定する言語です。  
-詳しくはこちらのリンクをご覧ください：[初心者向けCSS（スタイルシート）入門](https://saruwakakun.com/html-css/basic/css)
+詳しくはこちら：[初心者向けCSS（スタイルシート）入門](https://saruwakakun.com/html-css/basic/css)
 
-また、idやclassの名前はkebab-caseでお願いします。
-snake_case
-camelCase
+また、より高度な書き方に**`@`**を使うものや`hover`といったものがあります。  
+詳しくは【工事中】  
+
+---
+### 具体的な書き方
+
+CSS の書き方そのままです。
+
+``` vue linenums="1"
+<script>
+/*
+CSSの書き方
+*/
+</script>
+```
+
+[2023年度](https://2023.seiryofes.com)ではトップページや「ご案内」の6項目のページに多く用いられていました。
+
+書き方についてはこちら：[初心者向けCSS（スタイルシート）入門](https://saruwakakun.com/html-css/basic/css)
+
+### template内で設定する
+
+``` vue linenums="1"
+
+<template>
+    <!---->
+        <span class="hogehoge"> hogehoge </span>
+        <span style="color: #F00;"> hogehoge </span>
+        <!-- この二つは同じ表示 -->
+    <!---->
+</template>
+
+<style>
+.hogehoge {
+    color: #F00;
+}
+</style>
+```
+
+このように、本来`<style>`で書くべきものを、`style=" "`で記述することで同じ表示を実現できます。  
+単発的に色を変更するときなど、時にこの手法の方が見やすいコードになることがあるので、積極的に活用しましょう。
 
 
-また、@を使うタイプやhoverなどいろいろあるがそれは各ページの解説で。
-ちなみにlintstyleが一番正確で丁寧,cssそのままだからか
+## バックエンドとの関係【工事中】
+・asyncやaxios含む「バックとの関係」jsonなどもここ、nuxtauthも一応ここ？いや違うかも、ログイン関係はまた別かも、だってazureでリンク指定してるしな、また別につくろ、ああそういえばroleと被る？
 
 
+## エラーについて【工事中】
 
+エラーについて？  
+catch関係、もそうだし、開発環境だけエラー出る話も。というより本番環境だと揉み消される…？  
+エラーについてのページ欲しいね；e.g.SyntaxError  
 
+## lintfixについて【工事中】
 
-
-
-
-
-
-
-
-
-
-
-
-
-エラーについてのページ欲しいね；e.g.SyntaxError
-
-
-templteの説明で、例としてなんかあげて、なぜなら`<v-hoge hoge hoge="">`みたいな書き方
-行が湧けられるのはlintfixだよー⇨リンク飛ばす
-, もそう、別にスペース無くてもいいけどそうしてる
-スペース必要な場合もある、感覚で。改行も見やすくするためのやつと
-scriptの場合、;を使えば改行しなくていいよね、あとtemplateのなかでscript記述できるよね
+lintfixについて述べる予定、あまり書く事は無いかも？  
+ただ、PRでエラーが出るのでさすがに記述しないわけには、と  
+prettier  
 
 
