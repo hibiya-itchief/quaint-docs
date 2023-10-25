@@ -17,6 +17,8 @@ quaint-appレポジトリは、そのlanguageの9割以上をVueが占めてい�
 Vueのファイルである`.vue`ファイルが基本となっています。  
 このページでも、vueファイルについてを主に記述します。
 
+<br><br>
+
 ## ディレクトリ位置による違い
 vueファイルは、pagesフォルダ配下、layoutフォルダ配下、componentsフォルダ配下に配置します。
 
@@ -30,7 +32,7 @@ componentsフォルダ内には、どのページでも使える自作component�
   
 このページでは基本的に、pagesフォルダ、layoutsフォルダ配下のvueファイルを想定しています。
 
-
+<br><br>
 
 ## vueファイルの構造
 
@@ -85,7 +87,8 @@ CSS で記述します。これら3つの中では最も単純だと思います
 また、Node.js という言わば「JavaScriptの実行環境」がありますが、開発する上ではあまり気にしなくて結構です。  
 詳しくは省きます。
 
----
+<br><br>
+
 ## templateについて詳しく
 
 > HTML と Vue.js の独自の書き方、および Vuetify を使って記述します。
@@ -110,7 +113,8 @@ CSS で記述します。これら3つの中では最も単純だと思います
 
 この`<template>`の記述は、最終的に完全に HTML のファイルに変換されます。
 
----
+<br>
+
 ### 具体的な書き方
 
 HTML と同じように、入り子構造で成ります。
@@ -165,8 +169,8 @@ HTML の書き方についてはこちら：[初心者向けHTML入門](https://
 
 具体的な書き方は既存のvueファイルを見て学ぶのが良いと思います。
 
+<br>
 
----
 ### その他のcomponent
 
 <h4>NuxtLink</h4>
@@ -177,7 +181,8 @@ HTML の書き方についてはこちら：[初心者向けHTML入門](https://
 
 詳しくは【工事中】
 
----
+<br>
+
 ### 変数について
 
 Vue では、データが更新されたときに自動で表示を更新します。  
@@ -186,13 +191,14 @@ Vue では、データが更新されたときに自動で表示を更新しま�
 つまり、`<template>`と`<script>`の間で変数は共有されているということになります。  
 
 ただし、ある意味当然ですが、`<template>`ではグローバル変数しか用いることができません。  
-詳しくは：[scriptの方のやつ！！]()【工事中】
+詳しくは：[スコープとthis](#this)
 
 具体的に変数を用いるには、Mustache記法や`v-bind`等があります。  
 Mustache記法について詳しくはこちら：[Mustashe（マスタッシュ）記法](https://johobase.com/vue-js-mustashe-notation/)  
 `v-bind`等については次の[ディレクティブ](#_4)の項で説明します。
 
----
+<br>
+
 ### ディレクティブ
 
 ディレクティブについて：[主要なディレクティブ一覧](https://qiita.com/y-suzu/items/9b84da0a3a9ee4a5686b)  
@@ -234,6 +240,8 @@ seiryofes.comでは`@click`で使用することが多いです。
 例えば、`<NuxtLink to="/groups">`を押せば、[団体一覧のページ](https://2023.seiryofes.com/groups)に飛ぶことしかできません。  
 ですが、これを`<NuxtLink v-bind:to="hogehoge">`とすると、`<script>`で`hogehoge`の値を`"/groups"`だとか`"/map"`だとかにすることで簡単にリンク先を変更できます。  
 
+<br><br>
+
 ## scriptについて詳しく
 
 > JavaScript の拡張版である TypeScript を基本として、Vue.js や Nuxt.js の独自の書き方も用いて記述します。
@@ -249,7 +257,7 @@ HTML や CSS がページの見た目を担当するのに対し、JavaScript �
     このことを**コンパイル**と呼びます。  
     例えば、JavaScript では全ての行の終わりにセミコロン**`;`**を付ける必要がありますが、TypeScript ではコンパイル時に自動で付けてくれるため必要ありません。  
     公式の[Playground](https://www.typescriptlang.org/ja/play)では、コンパイル前後のコードの違いも見ることができます。  
-    型( Type )について、詳しくは【工事中】
+    型( Type )について、詳しくはこちら：[値・型・変数](https://typescriptbook.jp/reference/values-types-variables)
 
 JavaScript の書き方については、[MozillaのJavaScriptガイド](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide)に代表されるように、かなり多くの情報がネット上にあります。  
 対して、TypeScript の日本語情報はそれほど多くはありません。  
@@ -264,109 +272,261 @@ Nuxt.js（ナクスト・ジェイエス）は、Vue.js をベースとして開
 
 とにかく、seiryofes.comをよりよくしてくれるフレームワークという認識で結構です。
 
+また、SEO対策も`<script>`で行います。  
+詳しくは【工事中】
 
----
-### 具体的な書き方【工事中】
+<br>
 
-``` vue linenums="1"
+### 具体的な書き方
+
+2023/10/25時点の[groups/index.vue](https://github.com/hibiya-itchief/quaint-app/blob/develop/pages/groups/index.vue)より抜粋しました。
+
+``` ts linenums="1"
+
 <script lang="ts">
+import { Group, Tag } from 'types/quaint'
+import Vue from 'vue'
 
-いえあ
+type Data = {
+  nowloading: boolean
+  tags: Tag[]
+}
 
+export default Vue.extend({
+  name: 'GroupsPage',
+  auth: false,
+  async asyncData({ $axios, payload }): Promise<Partial<Data>> {
+    if (payload !== undefined) {
+      return { groups: payload.groups, tags: payload.tags }
+    }
+    const task = [$axios.$get('/groups'), $axios.$get('/tags')]
+    const res = await Promise.all(task)
+    return { groups: res[0], tags: res[1] }
+  },
+  data(): Data {
+    return {
+      nowloading: true,
+      tags: [],
+    }
+  },
+  head() {
+    return {
+      title: '探す (団体一覧)',
+      meta: [ //省略
+      ],
+    }
+  },
+  created() {
+    // 内容
+  },
+
+  methods: {
+    SearchGroups() {
+        // 内容
+    },
+    FilterGroups(group: Group) {
+        // 内容
+    },
+  }
+  })
+</script>
+
+```
+
+順に説明します。
+
+``` ts linenums="1"
+<script lang="ts">
+import { Group, Tag } from 'types/quaint'
+import Vue from 'vue'
+```
+
+あまり気にしなくて結構です。   
+2行目では、 [types/quaint.ts](https://github.com/hibiya-itchief/quaint-app/blob/develop/types/quaint.ts)でまとめて定義されている型( Type )のうち2つを`import`しています。各ページ、使うものだけを`import`してください。  
+
+???+ note "詳しく"
+    例えば、`Tag`についてはこのようになっています。
+
+    ``` ts linenums="1"
+    export type Tag = {
+      id: string
+      tagname: string
+    }
+    ```
+    これにより、型が`Tag`の変数は、必ずそのプロパティに型が`string`である`id`と、同じく型が`string`である`tagname`を持つということになります。  
+    参考：[型エイリアス](https://typescriptbook.jp/reference/values-types-variables/type-alias)
+
+``` ts linenums="5"
+type Data = {
+  nowloading: boolean
+  tags: Tag[]
+}
+```
+
+このページで使われるグローバル変数の型を定義しています。  
+グローバル変数について：[スコープとthis](#this)  
+必ずしも必須というわけではなく、型を定義せず使っているページもあります。  
+`Tag[]`というのはすべての要素が`Tag`型の配列のことです。  
+
+``` ts linenums="10"
+export default Vue.extend({
+  name: 'GroupsPage',
+  auth: false,
+```
+
+12行目の記述は、このページはログインしなくても閲覧できるということを意味します。  
+`auth`のデフォルトはtrueとなっています。
+
+``` ts linenums="13"
+  async asyncData({ $axios, payload }): Promise<Partial<Data>> {
+    if (payload !== undefined) {
+      return { groups: payload.groups, tags: payload.tags }
+    }
+    const task = [$axios.$get('/groups'), $axios.$get('/tags')]
+    const res = await Promise.all(task)
+    return { groups: res[0], tags: res[1] }
+  },
+```
+
+この部分の記述について、【工事中】  
+詳しくは：[レンダリング](nuxt.md/#_2)     
+
+``` ts linenums="21"
+  data(): Data {
+    return {
+      nowloading: true,
+      tags: [],
+    }
+  },
+```
+
+この部分では、先ほど用意したグローバル変数の初期値を設定します。
+
+``` ts linenums="27"
+  head() {
+    return {
+      title: '探す (団体一覧)',
+      meta: [ //省略
+      ],
+    }
+  },
+```
+
+29行目では、ページのタイトルを設定します。  
+![画像](images/vue-title.png)  
+30行目付近ではSEO対策の文言を入力します。  
+詳しくは：【工事中】
+
+``` ts linenums="34"
+  created() {
+    // 内容
+  },
+```
+
+createdの部分に記述した内容は、ページが開かれたときに実行されます。  
+また、ほぼ同じ挙動を示すmountedというものもあります。  
+詳しくは：[レンダリング](nuxt.md/#_2)     
+
+``` ts linenums="38"
+  methods: {
+    SearchGroups() {
+        // 内容
+    },
+    FilterGroups(group: Group) {
+        // 内容
+    },
+  }
+  })
 </script>
 ```
 
+methodsについて：[メソッドの書き方と呼び出す方法](https://progtext.net/programming/vue-method/)
 
+また、method(関数)内でreturnすると、値を返すことができます。
 
+???+ note "例"
+    ``` vue linenums="1"
+    <template>
+        <!---->
+            <v-btn v-show="HogeHoge()">Hoge</v-btn>
+        <!---->
+    </template>
 
-dta data⇨ここでグろーバル、templateでもつかえる　
-Dataでtype指定なこと、これ
+    <script lang="ts">
+    // 省略
+    methods: {
+        HogeHoge() {
+            return true
+            }
+    }
+    </script>
+    ```
+    `<v-btn>`は`HogeHoge()`を実行します。その結果trueが帰ってきたので、結果的に`v-show="true"`となります。
 
-`$axios`
+ただし、returnすると強制的にそこで関数が終わるので注意です。
 
+thisについては[次の項](#this)で説明します。
+
+<br>
+
+### スコープとthis
+
+スコープについて：[変数のスコープ](https://typescriptbook.jp/reference/statements/variable-scope)
+
+`<script>`においては、グローバル変数を指定するときに`this.`という記法を用います。
+
+!!! note "例"
+    変数`hogehoge`であれば、`this.hogehoge`
+
+それ以外はそのままです。
+
+ただし、`<template>`で変数を呼び出す際には、`this.`は不要です。  
+そもそも、グローバル変数しか呼び出すことはできません。  
+
+<br>
+
+### template内で記述する
 
 ``` vue linenums="1"
+<template>
+    <!---->
+        <v-btn @click="HogeHoge()">Hoge</v-btn>
+        <v-btn @click="hogehoge = 5">Hoge</v-btn>
+        <!-- この二つは同じ挙動 -->
+    <!---->
+</template>
 
-this.$axios.get???
-
+<script lang="ts">
+// 省略
+methods: {
+    HogeHoge() {
+        this.hogehoge = 5
+        }
+}
+</script>
 
 ```
 
+このように、関数を実行するはずだったところをそのまま記述することで、同じ挙動を実現できます。  
+また、2つ以上の処理を行う場合、セミコロン**`;`**を使って実現できます。単に改行でもかまいません。
+``` vue linenums="1"
+<v-btn @click="hoge = 5; hogehoge = 10">Hoge</v-btn>
+<v-btn @click="
+  hoge = 5
+  hogehoge = 10
+  ">Hoge</v-btn>
+<!-- この二つは同じ挙動 -->
+```
 
-<h4>createdなど</h4>
+<br>
 
+### その他有用なもの
 
+<h4>console.log</h4>
 
+【工事中】
 
-SSR/CSRへのリンクもとばす、絡むんだよなあ・・・・
-
-
-また、兄弟的な立ち位置の`mounted`などについても同様です？？嘘だろ
-
-Typeについて
-
-
-
-<h4>methods</h4>
-引数についても、
-
-リンク張るだけでもいいと思うけど、追加で、
-`@click="HogeHoge()`
-についても記述。また
-
-
-・this.
-v-modelとちょっとからむね
-スコープの話
-前提となるスコープの話：https://typescriptbook.jp/reference/statements/variable-scope
-に加えて、script内ではグローバル関数が呼び出せない、this.をつけて、this.関数名とすることで呼び出せる
-template内では逆にグローバル関数しか呼び出せません
-
-・console.log
-
-for文　if文
-
-
-nuxtlinkも？それは個別で？
-
-
-
-nuxtについて、SSrとか理解しなきゃ
-https://devlog.grapecity.co.jp/nuxtjs-quickstart/
-
-
-
-
-
-
-SSRのくだりに使えるかもしれないリンク：[これ](https://ja.vuejs.org/guide/introduction.html#the-progressive-framework)
-
-https://mid-works.com/columns/language/javascript/1138064
-
-
-### templateと絡む内容(仮題)
-
-e.g.thisもそうだし、`@click`の中でscriptの記述ができること
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<br><br>
 
 ## styleについて詳しく
 
@@ -378,7 +538,8 @@ CSS とは、Webページの文字の色や大きさ、背景、配置といっ�
 また、より高度な書き方に**`@`**を使うものや`hover`といったものがあります。  
 詳しくは【工事中】  
 
----
+<br>
+
 ### 具体的な書き方
 
 CSS の書き方そのままです。
@@ -394,6 +555,8 @@ CSSの書き方
 [2023年度](https://2023.seiryofes.com)ではトップページや「ご案内」の6項目のページに多く用いられていました。
 
 書き方についてはこちら：[初心者向けCSS（スタイルシート）入門](https://saruwakakun.com/html-css/basic/css)
+
+<br>
 
 ### template内で設定する
 
@@ -417,21 +580,6 @@ CSSの書き方
 このように、本来`<style>`で書くべきものを、`style=" "`で記述することで同じ表示を実現できます。  
 単発的に色を変更するときなど、時にこの手法の方が見やすいコードになることがあるので、積極的に活用しましょう。
 
+<br><br>
 
-## バックエンドとの関係【工事中】
-・asyncやaxios含む「バックとの関係」jsonなどもここ、nuxtauthも一応ここ？いや違うかも、ログイン関係はまた別かも、だってazureでリンク指定してるしな、また別につくろ、ああそういえばroleと被る？
-
-
-## エラーについて【工事中】
-
-エラーについて？  
-catch関係、もそうだし、開発環境だけエラー出る話も。というより本番環境だと揉み消される…？  
-エラーについてのページ欲しいね；e.g.SyntaxError  
-
-## lintfixについて【工事中】
-
-lintfixについて述べる予定、あまり書く事は無いかも？  
-ただ、PRでエラーが出るのでさすがに記述しないわけには、と  
-prettier  
-
-
+## 【工事中】

@@ -37,10 +37,10 @@ nav:
       - "来校者の入校処理とは": entry/about.md
   
   - "開発者向け":
-      - "はじめに【工事★】": developer/index.md
+      - "はじめに【工事中】": developer/index.md
       - "QUAINTの構造(暫定)": developer/quaint.md
-      - "GitHub(暫定？？)": developer/github.md
-      - "APIドキュメント【工事中】": developer/swagger-ui.md
+      - "GitHub【工事中】": developer/github.md
+      - "APIドキュメント(暫定)": developer/swagger-ui.md
       - "": dummy.md
       - "フロントエンド(quaint-app)":
           - "Codespace(暫定)": developer/front/codespace.md
@@ -56,7 +56,7 @@ nav:
 #              - "components/??": developer/front/ex/components.md
 #              - "nuxtconfig.ts": developer/front/ex/nuxtconfig.md      
       - "": dummy.md
-      - "バックエンド(quaint-api)【工事中】": developer/back.md
+      - "バックエンドAPI(quaint-api)": developer/back.md
       - "データベース【工事中】": developer/database.md
       - "": dummy.md
       - "サーバー管理【工事中】":
@@ -90,4 +90,4 @@ extra_css:
     - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css
     - design.css
 
-copyright: 'Copyright © 2006 - 2023 - 後で書く.'
+copyright: '© 2023 都立日比谷高校 IT委員会'

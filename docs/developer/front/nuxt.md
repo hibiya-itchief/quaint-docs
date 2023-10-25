@@ -7,6 +7,8 @@ Nuxt.js（ナクスト・ジェイエス）は、Vue.js をベースとして開
 > Vue.js 自体が JavaScript の View (HTMLファイル) のフレームワークですが、Nuxt.js はその Vue.js ファイルを使ってURLのルーティングや API 処理をはじめとするアプリケーション開発に欠かせない機能の実装を想定した仕様になっており、より開発がしやすくなっています。  
 > [Nuxt.jsとは？](https://techmania.jp/blog/javascript0009/)より
 
+<br><Br>
+
 ## ルーティング
 
 ここではこう定義します。(誤用だったらごめんです)  
@@ -52,6 +54,7 @@ pagesフォルダのvueファイルがそれぞれseiryofes.comのどのペー�
 
 残念ながらこの`/data`はAdminしか見ることができないのですが、このように、動的ルーティングであっても配下のディレクトリ構造に応じて正しくURLが用意されます。  
 
+<br>
 
 ### fallbackについて【工事中】
 
@@ -59,13 +62,13 @@ pagesフォルダのvueファイルがそれぞれseiryofes.comのどのペー�
 （厳密にいうと嘘かも.ここで、layouts/error.vueとの違いも記述する）  
 （nuxtconfig解説ページ？fallbackの200と404のくだり、nuxt generateの話）
 
-
-
-
+<br><br>
 
 ## レンダリング方法について【工事中】
 
 SSR CSRなど。
+
+<br><br>
 
 ## 工事中
 
@@ -74,4 +77,14 @@ APIって何の話…？？
 [リンク](https://develop365.gitlab.io/nuxtjs-2.8.X-doc/ja/guide/routing/)  
 
 NuxtLinkについてはこちら：https://v2.nuxt.com/ja/docs/get-started/routing/  
+
+
+nuxtlinkも？それは個別で？
+
+nuxtについて、SSrとか理解しなきゃ
+https://devlog.grapecity.co.jp/nuxtjs-quickstart/
+
+SSRのくだりに使えるかもしれないリンク：[これ](https://ja.vuejs.org/guide/introduction.html#the-progressive-framework)
+
+https://mid-works.com/columns/language/javascript/1138064
 

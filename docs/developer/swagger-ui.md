@@ -1,6 +1,6 @@
 # APIドキュメント (Swagger UI)
 
-## APIドキュメント (Swagger UI)とは
+## APIドキュメント (Swagger UI)とは(暫定)
 
 Swagger UIとは、APIのテストと仕様の文書化のためのツールです。  
 
@@ -21,10 +21,13 @@ Web APIを呼び出して実行するには本来、このように「ターミ�
 
 「(APIサーバーのURL)/docs」でアクセスできます。
 
-本番環境のAPI: おいおい書くのマズいだろということで、いやもう手遅れと言えば手遅れなんだけどさ…
+セキュリティ的にまずい気がするのでdiscordに載せます。
 
-検証環境のAPI: https://hogehoge
+## APIドキュメントの使い方(暫定)
 
-## APIドキュメントの使い方
+画像付きで解説する予定です。  
+暫定的に：[Swaggar UIの使い方](https://manual.nodeai.io/docs/berry/4/)
 
-画像付きで解説する予定.
+これに加えて、POSTとDELETEはAuthorizeしなければならないこと、Adminの確認方法と開発者ツールから確認する方法も記す。
+
+

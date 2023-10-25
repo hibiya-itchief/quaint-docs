@@ -1,27 +1,18 @@
 # Wiki管理(quaint-docs)
-【現在加筆中】
 
+## 工事中
 
+参考にしたサイトの一覧：  
+[MkDocsによるドキュメント作成](https://zenn.dev/mebiusbox/articles/81d977a72cee01)  
+[個人的導入＆設定まとめ](https://dev.classmethod.jp/articles/mkdocs-and-material-for-mkdocs-tips-matome/#custom-theme)  
+[基本のドキュメント配色設定方法](https://dev.classmethod.jp/articles/mkdocs-color-palette/)  
+[Material for MkDocs](https://mebiusbox.github.io/MkDocsTest/material/#)  
+[Materialの便利機能を使おう](https://mkdocs.nakaken88.com/material/extensions/)  
 
-generalについても書きたいね。
+## 工事中
 
+generalレポジトリについても書く.
 
 オレンジ色なの直した？？？
 
 上の検索バーの色を見やすくする。  
-あとさ、左上のアイコンまでimgだからCSSに引っかかってんのどうにかしようぜｗ
-
-
-正直これはそんな大変じゃなさそう、ただ優先順位が低いだけ
-
-
-
-参考リンクたち
-https://dev.classmethod.jp/articles/mkdocs-and-material-for-mkdocs-tips-matome/#custom-theme
-
-https://zenn.dev/mebiusbox/articles/81d977a72cee01
-
-https://dev.classmethod.jp/articles/mkdocs-color-palette/
-
-ハイライトについて
-https://mkdocs.nakaken88.com/material/extensions/

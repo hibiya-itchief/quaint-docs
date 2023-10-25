@@ -24,7 +24,7 @@ VSCode … Visual Studio Code の略
 ## 使用制限
 
 あります。  
-ただし、かなり作業しないと引っかかることはない気がするが、一応情報は遺さなければならない。  
+ただし、かなり作業しないと引っかかることはない気がするが、一応記しておく。  
 
 GitHub の自分のアカウントのSettings内の Billing and Plans の [Plans and usage](https://github.com/settings/billing/summary) を開き、Codespace の項を探すと、下画像のような画面が見られる。  
 ![画像](images/codespace-editor.png)
@@ -44,13 +44,15 @@ GitHub の自分のアカウントのSettings内の Billing and Plans の [Plans
 
 
 ## 【工事中】
-yarn自動
-yarn run dev
-nuxt generate
-lintfix（prettier）
 
-commitするときのerror:形式、lintfixエラー、など
-git commit --no-verify -m "aaa"も一応紹介
+commitは大きめに：commitlintの話  
+yarn自動  
+yarn run dev  
+nuxt generate  
+lintfix（prettier）  
+
+commitするときのerror:形式、lintfixエラー、など  
+git commit --no-verify -m "aaa"も一応紹介  
 
 
 nuxtgenerate: コンパイルされたver.
