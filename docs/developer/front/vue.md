@@ -138,8 +138,9 @@ HTML と同じように、入り子構造で成ります。
 HTML の書き方についてはこちら：[初心者向けHTML入門](https://saruwakakun.com/html-css/basic/html)
 
 コード全体をはさんでいる`<template>`が、HTML でいう`<html>`のようなものです。Vue 独自の書き方です。  
-!!! warning "注意"
-    状況は限られていますが、`<template>`の中に、また別に`<template>`タグが入ることがあります。詳しくは【工事中】
+???+ info "注意"
+    状況は限られていますが、`<template>`の中に、また別に`<template>`タグが入ることがあります。  
+    詳しくは【工事中】
 
 `<v-hogehoge>`のように、`v-`から始まっているタグは Vuetify のコンポーネントです。  
 
@@ -150,7 +151,7 @@ HTML の書き方についてはこちら：[初心者向けHTML入門](https://
 一番最初の`<v-app>`は必須です。`<v-app>`がないと Vuetify は使えません。  
 
 次の`<v-container>`は必須ではありませんが、基本記述するものという認識で良いです。
-??? tip "詳しく"  
+??? info "詳しく"  
     `<v-container>`中の内容は、両端に空白が挿入されるため、見やすくなります。中央寄せもされます。  
     対し、どうしても画面端のぎりぎりに何かを置きたい場合などは、`<v-container>`外に設置することで実現できます。  
     [2023年度のトップページ](https://2023.seiryofes.com)の右端まで色をつけている部分がその代表例です。   
@@ -252,7 +253,7 @@ HTML や CSS がページの見た目を担当するのに対し、JavaScript �
     **Javaは全く別の言語です。**JavaScriptの名は、当時人気であったJavaの名にあやかりこう名付けたそうです。  
     前述のとおり、JSと略されることがあります。  
 また、JavaScript の拡張版である TypeScript とは、JavaScript を基本にして、「型( Type )」に厳格にすることでエラーを未然に防ごうという言語です。TSと略されることがあります。
-???+ tip "詳しく"
+???+ info "詳しく"
     TypeScript では、JavaScript と同じ構文などが使えます。なので、TypeScript 独自の内容以外は、JavaScript と同じと考えても良いと思います。  
     また、TypeScript で記述したコードは、JavaScript で記述されたコードに変換されます。  
     このことを**コンパイル**と呼びます。  
@@ -344,7 +345,7 @@ import Vue from 'vue'
 あまり気にしなくて結構です。   
 2行目では、 [types/quaint.ts](https://github.com/hibiya-itchief/quaint-app/blob/develop/types/quaint.ts)でまとめて定義している型( Type )のうち2つを`import`しています。各ページ、使うものだけを`import`してください。  
 
-???+ note "詳しく"
+???+ info "詳しく"
     例えば、`Tag`についてはこのようになっています。
 
     ``` ts linenums="1"

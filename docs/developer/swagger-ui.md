@@ -4,7 +4,7 @@
 
 Swagger UIとは、APIのテストと仕様の文書化のためのツールです。  
 
-??? note "詳しく"
+??? info "詳しく"
     Web APIを呼び出して実行するには本来、このように「ターミナル」という黒い画面からよくわからないコマンドをたたく必要があったのですが、
 
     ![ターミナルからAPIを実行する例](images/swagger-ui-terminal.png)
@@ -35,7 +35,7 @@ Swagger UIとは、APIのテストと仕様の文書化のためのツールで�
 
 認証を行います。
 
-??? note "詳しくは"
+??? info "詳しく"
     ![画像](images/swagger-ui-auth.png)
     【工事中】  
     <!--
@@ -77,7 +77,7 @@ GETメソッドには基本的に必要な権限はありません。
 
 メソッドを実行することです。
 
-??? note "詳しく"
+??? info "詳しく"
     ![画像](images/swagger-ui-try.png)
     Executeを押すことで実行できます。  
     下にはその結果(Server response)が帰ってきます。  

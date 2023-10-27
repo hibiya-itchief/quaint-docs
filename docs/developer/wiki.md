@@ -16,3 +16,5 @@ generalレポジトリについても書こうか？それはIT Chief単位。
 IT ChiefというOrganizationの説明でもいいのか？という話。
 
 404ページが崩れるのどうにかする…
+
+Admonition一覧：[Admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#inline-blocks-inline-end)
