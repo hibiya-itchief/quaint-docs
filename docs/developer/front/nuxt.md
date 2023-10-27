@@ -59,18 +59,24 @@ pagesフォルダのvueファイルがそれぞれseiryofes.comのどのペー�
 ### fallbackについて【工事中】
 
 存在しないURLに飛ぶと404ページを表示するようにしています。  
-（厳密にいうと嘘かも.ここで、layouts/error.vueとの違いも記述する）  
-（nuxtconfig解説ページ？fallbackの200と404のくだり、nuxt generateの話）
+
+【工事中】
+
+(厳密にいうと違うかもしれない。layouts/error.vueとの違いも記述する。  
+nuxtconfigの解説ページ、fallbackの200と404のくだり、nuxt generateの話)
 
 <br><br>
 
-## レンダリング方法について【工事中】
+## レンダリング【工事中】
 
-SSR CSRなど。
+SSR CSRなど。  
+SPAなども。
 
 <br><br>
 
 ## 工事中
+
+Nuxtのできること一覧：[リンク](https://shotanukumizu-1000.hatenablog.com/entry/20211120)
 
 APIって何の話…？？  
 

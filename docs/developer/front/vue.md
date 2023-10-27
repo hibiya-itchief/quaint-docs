@@ -5,7 +5,8 @@
 > Vue (発音は /vjuː/、view と同様) は、ユーザーインターフェースの構築のための JavaScript フレームワークです。標準的な HTML、CSS、JavaScript を土台とする、コンポーネントベースの宣言的なプログラミングモデルを提供します。シンプルなものから複雑なものまで、ユーザーインターフェースの開発を効率的に支えるフレームワークです。  
 > [Vue 3の公式ドキュメント](https://ja.vuejs.org/guide/introduction.html#what-is-vue)より  
 
-QUAINT のフロントエンドで用いている JavaScript のフレームワークです。正式名称は Vue.js です。  
+QUAINTのフロントエンドで用いている Nuxt.js (後述)のベースとなっている、JavaScript のフレームワークです。  
+正式名称は Vue.js です。  
 
 バージョンは Vue 2 です。そのため Vue 3 の書き方とは異なる部分が多々ありますので注意してください。  
 
@@ -256,7 +257,6 @@ HTML や CSS がページの見た目を担当するのに対し、JavaScript �
     また、TypeScript で記述したコードは、JavaScript で記述されたコードに変換されます。  
     このことを**コンパイル**と呼びます。  
     例えば、JavaScript では全ての行の終わりにセミコロン**`;`**を付ける必要がありますが、TypeScript ではコンパイル時に自動で付けてくれるため必要ありません。  
-    公式の[Playground](https://www.typescriptlang.org/ja/play)では、コンパイル前後のコードの違いも見ることができます。  
     型( Type )について、詳しくはこちら：[値・型・変数](https://typescriptbook.jp/reference/values-types-variables)
 
 JavaScript の書き方については、[MozillaのJavaScriptガイド](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide)に代表されるように、かなり多くの情報がネット上にあります。  
@@ -342,7 +342,7 @@ import Vue from 'vue'
 ```
 
 あまり気にしなくて結構です。   
-2行目では、 [types/quaint.ts](https://github.com/hibiya-itchief/quaint-app/blob/develop/types/quaint.ts)でまとめて定義されている型( Type )のうち2つを`import`しています。各ページ、使うものだけを`import`してください。  
+2行目では、 [types/quaint.ts](https://github.com/hibiya-itchief/quaint-app/blob/develop/types/quaint.ts)でまとめて定義している型( Type )のうち2つを`import`しています。各ページ、使うものだけを`import`してください。  
 
 ???+ note "詳しく"
     例えば、`Tag`についてはこのようになっています。
@@ -354,7 +354,8 @@ import Vue from 'vue'
     }
     ```
     これにより、型が`Tag`の変数は、必ずそのプロパティに型が`string`である`id`と、同じく型が`string`である`tagname`を持つということになります。  
-    参考：[型エイリアス](https://typescriptbook.jp/reference/values-types-variables/type-alias)
+    また、このファイルで定義されている型はすべて大文字から始まります。  
+    参考：[型エイリアス](https://typescriptbook.jp/reference/values-types-variables/type-alias)  
 
 ``` ts linenums="5"
 type Data = {
@@ -367,6 +368,8 @@ type Data = {
 グローバル変数について：[スコープとthis](#this)  
 必ずしも必須というわけではなく、型を定義せず使っているページもあります。  
 `Tag[]`というのはすべての要素が`Tag`型の配列のことです。  
+
+変数名はsnake_caseとlowerCamelCaseのどちらかで命名しています。
 
 ``` ts linenums="10"
 export default Vue.extend({
@@ -467,6 +470,8 @@ methodsについて：[メソッドの書き方と呼び出す方法](https://pr
 
 thisについては[次の項](#this)で説明します。
 
+関数名はUpperCamelCaseで命名するようにしています。
+
 <br>
 
 ### スコープとthis
@@ -524,7 +529,21 @@ methods: {
 
 <h4>console.log</h4>
 
-【工事中】
+デバッグの際に重宝するメソッドです。  
+適宜変数や配列の値を出力することができるので、エラーの起きている原因を簡単に調査できます。  
+詳しくは：[コンソールにログを出力する](https://www.javadrive.jp/javascript/console_obj/index1.html)
+
+ただし、一般に製品版では使うべきではないとされています。あくまでも開発ツールの一つだということですね。
+
+<h4>Playground</h4>
+
+Playgroundとは、手軽にコードの試し書きができる開発環境です。  
+
+例としてTypeScript公式：[Playground](https://www.typescriptlang.org/ja/play)
+
+関数やメソッドの動作やコンポーネントの表示などをチェックできます。
+
+検索すれば、HTML・CSS・Vue・VuetifyなどもPlaygroundがあります。
 
 <br><br>
 
@@ -556,6 +575,8 @@ CSSの書き方
 
 書き方についてはこちら：[初心者向けCSS（スタイルシート）入門](https://saruwakakun.com/html-css/basic/css)
 
+class名などはkebab-caseで命名します。
+
 <br>
 
 ### template内で設定する
@@ -583,3 +604,6 @@ CSSの書き方
 <br><br>
 
 ## 【工事中】
+
+`<template>`において、`<v-icon>`にはマテリアルデザインのアイコンを使用しています。
+一覧：[Material Design Icons](https://pictogrammers.com/library/mdi/)

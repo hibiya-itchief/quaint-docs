@@ -5,17 +5,21 @@
 > 「GitHub（ギットハブ）」とはプログラムのソースコードを、オンラインで共有・管理するサービスです。  
 > [GitHubとは？](https://www.kagoya.jp/howto/it-glossary/develop/github/)より
 
-詳しくはこちら：[GitHubとは？](https://www.kagoya.jp/howto/it-glossary/develop/github/)  
-(ただし、我々のSurfaceでは基本的にローカル環境を整備しなくても良いと思います。  
-詳しくは【工事中】)
+たくさんの機能を持っているので最初は使いづらいと思いますが、じきに慣れます。  
+まずはこちら：[GitHubとは？](https://www.kagoya.jp/howto/it-glossary/develop/github/)  
+
+また、Gitについては【工事中】
 
 現在動いている星陵祭のサイト seiryofes.com や、現在表示されているこのページも、
 GitHub上にソースコードがあります。  
 
 このページでは、そんなGitHubの具体的な使い方について記します。  
+ただ、画像を要所要所で用意していますが、すべての画面・機能を網羅してはいないので、実際に扱うことで使い方を習得してください。
+
 (以下、IT委員会のGitHubに入っていることを前提とします。)  
 
-![画像](images/github-1.png)
+![画像](images/github-1.png)  
+(seiryofes.comの左上のメニューから開けます)
 
 <br><br>
 
@@ -44,31 +48,49 @@ GitHub上にソースコードがあります。
 
 唯一privateレポジトリ(非公開のレポジトリ)で、IT委員会内部についての情報などを入れる予定となっています。  
 
+<br><br>
+
 ここでは例として [quaint-app](https://github.com/hibiya-itchief/quaint-app/tree/develop) レポジトリのdevelopブランチを使って説明します。  
 
 ![画像](images/github-2.png)
-赤枠の内容を上から順に説明します。  
 
-一番左の[Code](https://github.com/hibiya-itchief/quaint-app/tree/develop)ではソースコードの一覧が表示されます。  
+<h4>左上のCode</h4>
+
+ソースコードの一覧が表示されます。  
+
+<h4>Issues</h4>
 
 [Issues](https://github.com/hibiya-itchief/quaint-app/issues)では、このレポジトリ内のissue一覧が表示されます。  
 詳しくは：[Issue](#issue)
 
+<h4>Pull requests</h4>
+
 [Pull requests](https://github.com/hibiya-itchief/quaint-app/pulls)では、レポジトリ内のプルリクエスト一覧が表示されます。  
 詳しくは：[Pull request](#pull-request)
 
-次の赤枠は、現在開いているbranchを示しています。  
+<h4>developと書かれたボタン</h4>
 
-その右には現在このレポジトリにあるbranchの数が示され、押すとbranch一覧のページに飛びます。    
+現在開いているbranchを示しています。  
+押すことで違うbranchを開くことができます。
+
+<h4>branches</h4>
+
+現在このレポジトリにあるbranchの数が示されています。  
+押すとbranch一覧のページに飛びます。    
 詳しくは：[ブランチ・コミット / Branch & Commit](#branch-commit)
 
-右端のCodeというのは、codespaceを作るためのボタンです。  
+<h4>緑色のCodeボタン</h4>
+
+Codespaceを作るためのボタンです。  
 詳しくは：[Codespace](#codespace)  
 
-また、画面外下方には **`README.md`** のプレビューが表示されています。  
-詳しくは【工事中】  
+<br><br>
 
-次に、[pages/index.vue](https://github.com/hibiya-itchief/quaint-app/blob/develop/pages/index.vue)を例にして、ファイルの編集画面を説明します。  
+また、画面外下方には **`README.md`** のプレビューが表示されています。  
+README.mdには、基本的にCodespaceを開いた際にすることが記されています。
+
+<br><br>
+次に、[pages/index.vue](https://github.com/hibiya-itchief/quaint-app/blob/develop/pages/index.vue)を例にして、GitHub備え付けのファイル編集画面を説明します。  
 
 ![画像](images/github-3.png)
 
@@ -96,7 +118,7 @@ GitHubでは、本流を直接変更するとリスクが大きいため、
 issueを解決するために作ることが多いです。  
 
 ![画像](images/github-4.png)
-branch一覧のページです。  
+branch一覧のページです。([リンク](https://github.com/hibiya-itchief/quaint-app/branches))  
 
 quaint-appレポジトリの場合、デフォルトのbranchはdevelopとなっていますが、  
 それに加えmainブランチも重要なブランチとなっています。  
@@ -111,6 +133,8 @@ developをmainにマージすることで、seiryofes.comの内容が更新さ�
 
 Active branchesは３か月以内にcommitがあったbranchで、  
 Stale branchesはそれより古いもののことです。
+
+<br>
 
 ![画像](images/github-5.png)
 branchを作る際は、名前と、源流を指定されます。  
@@ -127,13 +151,15 @@ branchを作る際は、名前と、源流を指定されます。
  **`(issueの番号)-(issueの題名)`**  
 という名前でつくることができます。  
 
+<br>
+
 ![画像](images/github-8.png)
-また、先述のファイル編集画面で編集後、右上の「Commit changes...」というボタンを押すか「Ctrl+S」を押すと、**Commit**ができます。  
+また、GitHub備え付けのファイル編集画面で編集後、右上の「Commit changes...」というボタンを押すか「Ctrl+S」を押すと、**Commit**ができます。  
 (ファイルの内容がひとつも変わっていないと、押しても出てきません)  
 
 Commitとは、branch内で編集内容を更新することです。  
 
-commit名にはどのような変更を行ったのかを書いておきます。  
+commitメッセージにはどのような変更を行ったのかを書いておきます。  
 また、commitは「編集」とは違い、軌跡を残すというイメージの方がよいです。  
 
 ??? note "詳しく"
@@ -141,10 +167,10 @@ commit名にはどのような変更を行ったのかを書いておきます�
     「編集」のつもりで、試行錯誤を全てcommitで行っていたときの画像です。  
     これは正しいcommitのあり方とは違いますので注意してください。  
 
-代わりに、後に記述する[Codespace](#codespace)内か[Web Editor](#web-editor)内で編集を行いましょう。  
+代わりに、[Codespace](#codespace)あるいは[Web Editor](#web-editor)で編集を行いましょう。  
 
 また、mainブランチ・developブランチではcommitはできず、代わりに「 *Propose changes* 」となります。  
-この両branchを編集したいなら、新しくbranchを作って、そこでcommitしてマージしてくださいということです。  
+この両branchを編集したいなら、新しくbranchを作り、そこでcommitしてマージしてくださいということです。  
 
 また、commitと同じような言葉にpushという言葉があります。  
 GitHubのみを使うのであればその違いは意識しなくて大丈夫です。
@@ -187,6 +213,7 @@ issueを見る画面です（再掲、赤枠を追加）。
 
 プルリクエストとは、本流とbranchの間の変更箇所を結合して本流の一部にするための機能のことです。  
 (以下、結合することをマージと言う)  
+
 正確には、マージしたいというお願いのことです。  
 長いのでPRと略すこともあります。  
 
@@ -210,66 +237,40 @@ Reviewの仕方については【要加筆】
 
 ## Codespace
 
-Codespaceとは、編集しながら、実際にプログラムがどう動作するのか確認できるツールです。<br>
-基本的にVSCodeで編集します。
+> 分かりやすく言うと、タブレットやPCなどのクライアントにブラウザさえあれば、クリック1つで開発環境が起動し、すぐに開発作業に入ることができるというサービスです。  
+> [GitHub Codespacesで手軽に始めるソフトウェア開発](https://and-engineer.com/articles/YvGkmxAAACEAaaQu)より
 
-<h3>【工事中】</h3>
-
-前述のとおりCodeボタンでつくります。  
-
-デフォルトではVisual Studio Code(以下VSCode)のweb版が開くようになっています。  
-開いて少し待つと、VSCode(Web)の画面が開きます。  
-これがエクスプローラー、これがエディター、これがコンソール、といった風に説明します。  
-
-また、設定でVSCode(アプリ)が開くようにもできます。  
-最初にVSCode(アプリ)をインストールします（説明を省くか要検討）。  
-ここの設定で変えられます（要加筆）。  
-アプリの方がリアルタイムでエラーを見つけてくれるから便利(要加筆)。  
-
-VSCode(アプリ)でquaint-appレポジトリを開発する場合、アドレスバーを127.0.0.1:3000からlocalhost:3000に変更しましょう。  
-そうすることでログイン処理ができます。  
-[ここ](https://github.com/hibiya-itchief/quaint-docs/pull/21#discussion_r1270231270)で指定されていることを記す。  
-
-* 最初にyarnを入れること(終了コード127)
-(設定で不要にする予定)
-* yarn run devあるいはエクスプローラーのdevを押してプレビュー(同時に[GitHub Pages](#github-actions)の軽い説明)
-* yarn run lintfixあるいはエクスプローラーlintfixで整形
-(lintエラーを紹介)
-* docsの場合はCtrl+F5(Surfaceの場合、キーボード左下のFnボタンを押して光らせてから。要加筆)
+詳しくは：[Codespace](codespace.md)
 
 <br><br>
 
 ## Web Editor
 
 github.com/~~~となっているところを、  
-github.**dev**/~~~と書き換えると開くことができる。  
-基本的にVSCode(Web)と同じです。  
-当然ですがCodespaceのコアタイムを消費しません。  
-複数ファイルの同時commitができるため、編集は基本的にWeb Editorを使うのがよいと思います。  
+github.**dev**/~~~と書き換えると開くことができるVSCode(ブラウザ版)です。  
+GitHub備え付けのファイル編集画面と違い、複数ファイルの同時commitもできるため、些細な編集であれば基本的にWeb Editorを使うのがよいと思います。  
+ただし、Lintエラーは防げませんので注意が必要です。
 
-## GitHub Actions など
+<br><br>
+
+## GitHub Actions等【工事中】
 
 GitHub ActionsやDependabot、GitHub Pagesなどについて説明する予定です。  
+dependabotは無視で、っていう理由も軽く…
 
-## その他
 
-### スマホアプリ
+## スマホアプリ
 GitHubにはスマホアプリがあります。  
 もちろん具体的な開発を行うのはPC上となりますが、スマホでissueやPRの議論ができるというのは非常に便利です。  
 
-### 通知について
+## 通知について
+
 初期設定時、GitHubの通知は非常に多いです。  
 
-【工事中】
 必要な通知だけ受け取るように設定しましょう。  
-スマホで気づけるため、GitHubスマホアプリ、Gmailなどがおすすめ。
+スマホで気づけるため、GitHubスマホアプリ、Gmailなどがおすすめ。  
+詳しくは【工事中】
 
-### 学割
-学割について記述する予定です。
+## 【工事中】
 
-【工事中】
-
-### 環境構築
-
-VSCodeについて、Git Bashについて。
-全生徒の所持するSurfaceには、環境を構築できるほどの容量がないというのが主な理由です。  
+学割についても記述する。
