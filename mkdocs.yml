@@ -37,13 +37,13 @@ nav:
       - "来校者の入校処理とは": entry/about.md
   
   - "開発者向け":
-      - "はじめに【工事中】": developer/index.md
-      - "QUAINTの構造(暫定)": developer/quaint.md
-      - "GitHub【工事中】": developer/github.md
-      - "APIドキュメント(暫定)": developer/swagger-ui.md
+      - "はじめに": developer/index.md
+      - "QUAINTの構造": developer/quaint.md
+      - "GitHub": developer/github.md
+      - "Codespace": developer/codespace.md
+      - "APIドキュメント": developer/swagger-ui.md
       - "": dummy.md
       - "フロントエンド(quaint-app)":
-          - "Codespace(暫定)": developer/front/codespace.md
           - "権限一覧【工事中】 ": developer/front/role.md
           - "Vueとは何か": developer/front/vue.md
           - "Nuxtについて詳しく": developer/front/nuxt.md
@@ -57,13 +57,13 @@ nav:
 #              - "nuxtconfig.ts": developer/front/ex/nuxtconfig.md      
       - "": dummy.md
       - "バックエンドAPI(quaint-api)": developer/back.md
-      - "データベース【工事中】": developer/database.md
+      - "データベース【工事中】": dummy.md #developer/database.md
       - "": dummy.md
       - "サーバー管理【工事中】":
-          - "Cloudflare": developer/server/cloudflare.md
-          - "Microsoft Azure": developer/server/azure.md
+          - "Cloudflare": dummy.md #developer/server/cloudflare.md
+          - "Microsoft Azure": dummy.md #developer/server/azure.md
       - "": dummy.md
-      - "Wiki管理(quaint-docs)【工事中】": developer/wiki.md
+      - "Wiki管理(quaint-docs)": developer/wiki.md
       
 
   - "昨年度IT委員会勉強会資料":

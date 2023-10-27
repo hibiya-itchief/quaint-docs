@@ -11,8 +11,10 @@
 
 ## 工事中
 
-generalレポジトリについても書く.
+generalレポジトリについても書こうか？それはIT Chief単位。
 
-オレンジ色なの直した？？？
+IT ChiefというOrganizationの説明でもいいのか？という話。
 
-上の検索バーの色を見やすくする。  
+404ページが崩れるのどうにかする…
+
+Admonition一覧：[Admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#inline-blocks-inline-end)
