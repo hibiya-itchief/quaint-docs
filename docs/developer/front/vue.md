@@ -156,7 +156,7 @@ HTML の書き方についてはこちら：[初心者向けHTML入門](https://
     対し、どうしても画面端のぎりぎりに何かを置きたい場合などは、`<v-container>`外に設置することで実現できます。  
     [2023年度のトップページ](https://2023.seiryofes.com)の右端まで色をつけている部分がその代表例です。   
 
-    しかし、`<v-container>`外に設置しなくても実装できたのではないかと今思っています。検証はまた今度。【工事中】
+    しかし、`<v-container>`外に設置しなくても実装できたのではないかと今思っています。検証はまた今度行います。【工事中】
 
 `<v-container>`に加え、`<v-row>`や`<v-col>`などがあります。主にこの3つを用いて Vuetify のグリッドを構成します。  
 詳しくはこちら：[Vuetify Grid System](https://comfortdesignlab.github.io/about/vuetify/grid-system)  

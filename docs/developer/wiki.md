@@ -11,10 +11,9 @@
 
 ## 工事中
 
-generalレポジトリについても書こうか？それはIT Chief単位。
+generalレポジトリについても書く.  
+IT ChiefというOrganization単位での説明とする予定.
 
-IT ChiefというOrganizationの説明でもいいのか？という話。
-
-404ページが崩れるのどうにかする…
+404ページが崩れるのに対処する.
 
 Admonition一覧：[Admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#inline-blocks-inline-end)

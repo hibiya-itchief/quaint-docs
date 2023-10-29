@@ -7,7 +7,7 @@ Nuxt.js（ナクスト・ジェイエス）は、Vue.js をベースとして開
 > Vue.js 自体が JavaScript の View (HTMLファイル) のフレームワークですが、Nuxt.js はその Vue.js ファイルを使ってURLのルーティングや API 処理をはじめとするアプリケーション開発に欠かせない機能の実装を想定した仕様になっており、より開発がしやすくなっています。  
 > [Nuxt.jsとは？](https://techmania.jp/blog/javascript0009/)より
 
-<br><Br>
+<br><br>
 
 ## ルーティング
 
@@ -60,37 +60,24 @@ pagesフォルダのvueファイルがそれぞれseiryofes.comのどのペー�
 
 存在しないURLに飛ぶと404ページを表示するようにしています。  
 
-【工事中】
-
-(厳密にいうと違うかもしれない。layouts/error.vueとの違いも記述する。  
-nuxtconfigの解説ページ、fallbackの200と404のくだり、nuxt generateの話)
+(厳密にいうと違う場合がある。layouts/error.vueとの違いも記述する。  
+nuxtconfigの解説ページ、fallbackの200と404のくだり、nuxt generateの話など。)
 
 <br><br>
 
 ## レンダリング【工事中】
 
-SSR CSRなど。  
-SPAなども。
+SPA,SSR,CSR,SSGについて説明する予定。  
+今は各自検索してもらえると助かります。
 
 <br><br>
 
 ## 工事中
 
-Nuxtのできること一覧：[リンク](https://shotanukumizu-1000.hatenablog.com/entry/20211120)
-
-APIって何の話…？？  
-
+参考になるかもしれないリンク.  
+[リンク](https://shotanukumizu-1000.hatenablog.com/entry/20211120)  
 [リンク](https://develop365.gitlab.io/nuxtjs-2.8.X-doc/ja/guide/routing/)  
-
-NuxtLinkについてはこちら：https://v2.nuxt.com/ja/docs/get-started/routing/  
-
-
-nuxtlinkも？それは個別で？
-
-nuxtについて、SSrとか理解しなきゃ
-https://devlog.grapecity.co.jp/nuxtjs-quickstart/
-
-SSRのくだりに使えるかもしれないリンク：[これ](https://ja.vuejs.org/guide/introduction.html#the-progressive-framework)
-
-https://mid-works.com/columns/language/javascript/1138064
-
+[リンク](https://devlog.grapecity.co.jp/nuxtjs-quickstart/)  
+[リンク](https://ja.vuejs.org/guide/introduction.html#the-progressive-framework)  
+[リンク](https://mid-works.com/columns/language/javascript/1138064)  
+NuxtLinkについてはこちら：[リンク](https://v2.nuxt.com/ja/docs/get-started/routing/)
