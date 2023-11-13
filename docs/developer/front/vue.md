@@ -471,7 +471,7 @@ methodsについて：[メソッドの書き方と呼び出す方法](https://pr
 
 thisについては[次の項](#this)で説明します。
 
-関数名はUpperCamelCaseで命名するようにしています。
+関数名はPascalCaseで命名するようにしています。
 
 <br>
 

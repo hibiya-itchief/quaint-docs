@@ -65,10 +65,19 @@ nuxtconfigの解説ページ、fallbackの200と404のくだり、nuxt generate�
 
 <br><br>
 
-## レンダリング【工事中】
+## レンダリング・ライフサイクル【工事中】
 
-SPA,SSR,CSR,SSGについて説明する予定。  
+SPA,SSR,CSR,SSGおよびライフサイクルについて説明する予定。  
 今は各自検索してもらえると助かります。
+
+AsyncDataに由来するものなど、2023年度の主要なバグの半分程度はこの分野に関連します。
+
+<br><br>
+
+## PWA【工事中】
+
+> PWA（Progressive Web Apps）プログレッシブウェブアプリは、WebサイトとWebアプリをネイティブアプリのように端末にインストールすることができるアプリ  
+> [ネイティブアプリとは？](https://yapp.li/magazine/2093/#PWA)より
 
 <br><br>
 

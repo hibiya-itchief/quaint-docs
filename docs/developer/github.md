@@ -255,8 +255,13 @@ GitHub備え付けのファイル編集画面と違い、複数ファイルの�
 
 ## GitHub Actions等【工事中】
 
-GitHub ActionsやDependabot、GitHub Pagesなどについて説明する予定です。  
-dependabotは無視で、っていう理由も軽く…
+* GitHub Actionsやci
+* Dependabot
+
+等について説明する予定です。
+
+Dependabotは完全無視で結構です。  
+その理由も述べる予定です。
 
 
 ## スマホアプリ
