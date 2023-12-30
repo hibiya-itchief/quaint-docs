@@ -108,7 +108,9 @@ commitメッセージのLinterです。
 実際使っているものに限定して書くと、  
 commitメッセージは「feat: 内容」「fix: 内容」という形式で書いてねというものです。  
 最初の英単語には他にもdocsなどがありますが、ほぼほぼこの2つのみが使用されています。  
-参考：[Git でコミットする時のルールを言語化してみた](https://pyteyon.hatenablog.com/entry/2020/02/27/092101)  
+参考：[コミットメッセージの文法](https://zenn.dev/kalubi/articles/27fa889c338cdf#%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E6%96%87%E6%B3%95)  
+[[転載] gitにおけるコミットログ/メッセージ例文集100 ](https://gist.github.com/mono0926/e6ffd032c384ee4c1cef5a2aa4f778d7)  
+[Git でコミットする時のルールを言語化してみた](https://pyteyon.hatenablog.com/entry/2020/02/27/092101)  
 
 ただし、ターミナルに以下のように書くと、Commitlintを無視してcommitができます。  
 `git commit --no-verify -m "内容"`  
@@ -124,26 +126,26 @@ commitメッセージは「feat: 内容」「fix: 内容」という形式で書
 
 ## 使用制限
 
-あります。  
-ただし、かなり作業しないと引っかかることはない気がするが、一応記しておく.  
+かなり作業しないと制限されることはありませんが、一応記しておきます.  
 
-GitHub の自分のアカウントのSettings内の Billing and Plans の [Plans and usage](https://github.com/settings/billing/summary) を開き、Codespace の項を探すと、下画像のような画面が見られる。  
+GitHub の自分のアカウントのSettings内の Billing and Plans の [Plans and usage](https://github.com/settings/billing/summary) を開き、Codespace の項を探すと、下画像のような画面が見られます。  
 ![画像](images/codespace-usage.png)
 上の Usage hours はそのまま、codespaceを利用した時間のこと。  
 今月(米時間)の、codespaceの open だった時間の累計のこと。  
-ただし、120と書いてあるのは紛らわしい。これは120時間の利用ということではなく、120 core hours 利用したということである。
-我々無料 GitHub ユーザーの場合 codespace は2-coreで実装されるため、実際には60時間で120 core hoursが尽きるという計算になる。  
-いろいろ説明を省いているが、つまり月60時間まで利用できるというだけ。  
-使い終わった codespace は stop して、だらだらと codespace を使わないようにしよう。  
+ただし、120と書いてあるのは紛らわしい表記で、これは120時間の利用ということではなく、120 core hours 利用したということです。  
+我々無料 GitHub ユーザーの場合 codespace は2-coreで実装されるため、実際には60時間で120 core hoursが尽きるという計算になります。  
+いろいろ説明を省いていますが、つまり月60時間まで利用できるということです。  
+使い終わった codespace は stop して、だらだらと codespace を使わないようにしてください。 
 
-下のStorageは気にしなくても大丈夫。  
-おそらく、stop されている codespace でも容量を食うため制限を設けているということなのだろうけど、いくつも同時に codespace を用意したりしなければこれが尽きることはそうない。月末になれば Storage で警告されることがあるかもしれないがあまり気にしなくてよいと思われる。
+下のStorageは気にしなくても大丈夫です。  
+おそらく、stop されている codespace でも容量を食うため制限を設けているということなのでしょうが、いくつも同時に codespace を用意したりしなければこれが尽きることはそうありません。月末になれば Storage で警告されることがあるかもしれませんが、あまり気にしなくてよいと思われます。
 
-この2種については制限が近づいてくると通知してくれる。  
-"You used 50% of ~~~" みたいな感じだったような気がする。  
+この2種については制限が近づいてくると通知してくれます。  
+"You used 50% of ~~~" みたいな感じです。  
 
 <br><br>
 
 ## 【工事中】
 
-yarnについて規定されているファイルの説明.
+yarnについて規定されているファイルの説明.  
+huskyについても最低限加筆.
