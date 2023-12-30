@@ -1,80 +1,78 @@
 site_name: 星陵祭オンライン整理券Wiki
 
 theme:
-  language: ja
-  name: material
-  palette:
-    scheme: default
-    primary: blue
-    accent: pink
-  font:
-    text: M PLUS 1p
-    code: Source Code Pro
-  logo: assets/logo.png
-  features:
-      - navigation.tabs
-      #  - tabs
+    language: ja
+    name: material
+    palette:
+        scheme: default
+        primary: blue
+        accent: pink
+    font:
+        text: M PLUS 1p
+        code: Source Code Pro
+    logo: assets/logo.png
+    features:
+        - navigation.tabs
+        #  - tabs
 
 #hide:
 #  - navigation
 
 extra:
-  generator: false
-  
+    generator: false
+
 nav:
-  - "当システムの使い方": index.md
+    - "当システムの使い方": index.md
 
-  - "当システムについて詳しく":
-      - "制作背景": detail/history.md
-      - "システムの詳細": detail/system.md
-      - "ユーザーの権限": detail/role.md
-  
-  - "クラ代・団体代表者向け":
-      - "団体情報の編集": owner/manage_group.md
-      - "映像配信": owner/video_stream.md
-  
-  - "チーフ会入校処理担当者向け":
-      - "来校者の入校処理とは": entry/about.md
-  
-  - "開発者向け":
-      - "はじめに": developer/index.md
-      - "QUAINTの構造": developer/quaint.md
-      - "GitHub": developer/github.md
-      - "Codespace": developer/codespace.md
-      - "APIドキュメント": developer/swagger-ui.md
-      - "": dummy.md
-      - "フロントエンド(quaint-app)":
-          - "権限一覧【工事中】 ": developer/front/role.md
-          - "Vueとは何か": developer/front/vue.md
-          - "Nuxtについて詳しく": developer/front/nuxt.md
-          - "その他【工事中】": developer/front/etc.md
-#          - "各ファイルの解説【工事中】":
-#              - "index.vue": developer/front/ex/home.md
-#              - "ご案内ページまとめ": developer/front/ex/info.md
-#              - "/groups/index.vue": developer/front/ex/groups.md
-#              - "layouts/default.vue": developer/front/ex/default.md
-#              - "components/??": developer/front/ex/components.md
-#              - "nuxtconfig.ts": developer/front/ex/nuxtconfig.md      
-      - "": dummy.md
-      - "バックエンドAPI(quaint-api)": developer/back.md
-      - "データベース【工事中】": dummy.md #developer/database.md
-      - "": dummy.md
-      - "サーバー管理【工事中】":
-          - "Cloudflare": dummy.md #developer/server/cloudflare.md
-          - "Microsoft Azure": dummy.md #developer/server/azure.md
-      - "": dummy.md
-      - "Wiki管理(quaint-docs)": developer/wiki.md
-      
+    - "当システムについて詳しく":
+          - "制作背景": detail/history.md
+          - "システムの詳細": detail/system.md
+          - "ユーザーの権限": detail/role.md
 
-  - "昨年度IT委員会勉強会資料":
-      - "もくじ": studybook/index.md
-      - "春休み0日目 環境構築": studybook/spring_day0_setup_environment.md
-      - "春休み1日目 ツールの使い方": studybook/spring_day1_tutorial.md
-      - "春休み2日目 Nuxt.js入門": studybook/spring_day2_nuxtjs.md
+    - "クラ代・団体代表者向け":
+          - "団体情報の編集": owner/manage_group.md
+          - "映像配信": owner/video_stream.md
 
+    - "チーフ会入校処理担当者向け":
+          - "来校者の入校処理とは": entry/about.md
 
-  - "もどる": https://seiryofes.com
+    - "開発者向け":
+          - "はじめに": developer/index.md
+          - "QUAINTの構造": developer/quaint.md
+          - "GitHub": developer/github.md
+          - "Codespace": developer/codespace.md
+          - "APIドキュメント": developer/swagger-ui.md
+          - "": dummy.md
+          - "フロントエンド(quaint-app)":
+                - "権限一覧【工事中】 ": developer/front/role.md
+                - "Vueとは何か": developer/front/vue.md
+                - "Nuxtについて詳しく": developer/front/nuxt.md
+                - "テーマカラーの設定": developer/front/theme-color.md
+                - "その他【工事中】": developer/front/etc.md
+          #          - "各ファイルの解説【工事中】":
+          #              - "index.vue": developer/front/ex/home.md
+          #              - "ご案内ページまとめ": developer/front/ex/info.md
+          #              - "/groups/index.vue": developer/front/ex/groups.md
+          #              - "layouts/default.vue": developer/front/ex/default.md
+          #              - "components/??": developer/front/ex/components.md
+          #              - "nuxtconfig.ts": developer/front/ex/nuxtconfig.md
+          - "": dummy.md
+          - "バックエンドAPI(quaint-api)": developer/back.md
+          - "データベース【工事中】": dummy.md #developer/database.md
+          - "": dummy.md
+          - "サーバー管理【工事中】":
+                - "Cloudflare": dummy.md #developer/server/cloudflare.md
+                - "Microsoft Azure": dummy.md #developer/server/azure.md
+          - "": dummy.md
+          - "Wiki管理(quaint-docs)": developer/wiki.md
 
+    - "昨年度IT委員会勉強会資料":
+          - "もくじ": studybook/index.md
+          - "春休み0日目 環境構築": studybook/spring_day0_setup_environment.md
+          - "春休み1日目 ツールの使い方": studybook/spring_day1_tutorial.md
+          - "春休み2日目 Nuxt.js入門": studybook/spring_day2_nuxtjs.md
+
+    - "もどる": https://seiryofes.com
 
 markdown_extensions:
     - admonition
@@ -90,4 +88,4 @@ extra_css:
     - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css
     - design.css
 
-copyright: '© 2023 都立日比谷高校 IT委員会'
+copyright: "© 2023 都立日比谷高校 IT委員会"
