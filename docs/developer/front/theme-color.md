@@ -6,23 +6,13 @@
 
 ~/assets/css/main.css に主な css の設定がまとめられています。
 ![画像](images/main-css.png)
-:root{}にある--theme-color の欄に設定したテーマカラーのカラーコードを入力してください。
+:root{}にある--theme-color の欄に設定したいテーマカラーのカラーコードを入力してください。
 
 ## vuetify の設定の変更
 
 nuxt.config.ts にかかれている vuetify の設定を変更します。
 ![画像](images/vuetify-setting-theme-color.png)
-vuetify:{
-theme:{
-themes:{
-light:{
-theme_color: '設定したいカラーコード'
-}
-}
-}
-}
-
-theme_color にテーマカラーとして設定したカラーコードを入力してください。
+theme_color にテーマカラーとして設定したいカラーコードを入力してください。
 
 ## ローディングバーのカラーの設定
 
