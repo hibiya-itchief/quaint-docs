@@ -48,6 +48,7 @@ nav:
                 - "Vueとは何か": developer/front/vue.md
                 - "Nuxtについて詳しく": developer/front/nuxt.md
                 - "テーマカラーの設定": developer/front/theme-color.md
+                - "フロントエンドのデプロイ": developer/front/deploy.md
                 - "その他【工事中】": developer/front/etc.md
           #          - "各ファイルの解説【工事中】":
           #              - "index.vue": developer/front/ex/home.md
@@ -61,7 +62,6 @@ nav:
           - "データベース【工事中】": dummy.md #developer/database.md
           - "": dummy.md
           - "サーバー管理【工事中】":
-                - "Cloudflare": dummy.md #developer/server/cloudflare.md
                 - "Microsoft Azure": dummy.md #developer/server/azure.md
           - "": dummy.md
           - "Wiki管理(quaint-docs)": developer/wiki.md
