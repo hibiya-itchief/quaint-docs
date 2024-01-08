@@ -1,0 +1,2418 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../role/">
+      
+      
+        <link rel="next" href="../nuxt/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>Vueとは何か - 星陵祭オンライン整理券Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=M+PLUS+1p:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"M PLUS 1p";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+    
+      <link rel="stylesheet" href="../../../design.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vue" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../../.." title="星陵祭オンライン整理券Wiki" class="md-header__button md-logo" aria-label="星陵祭オンライン整理券Wiki" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            星陵祭オンライン整理券Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Vueとは何か
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  当システムの使い方
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../detail/history/" class="md-tabs__link">
+          
+  
+  当システムについて詳しく
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../owner/manage_group/" class="md-tabs__link">
+          
+  
+  クラ代・団体代表者向け
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../entry/about/" class="md-tabs__link">
+          
+  
+  チーフ会入校処理担当者向け
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  開発者向け
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../studybook/" class="md-tabs__link">
+          
+  
+  昨年度IT委員会勉強会資料
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://seiryofes.com" class="md-tabs__link">
+        
+  
+    
+  
+  もどる
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="星陵祭オンライン整理券Wiki" class="md-nav__button md-logo" aria-label="星陵祭オンライン整理券Wiki" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    星陵祭オンライン整理券Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    当システムの使い方
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    当システムについて詳しく
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            当システムについて詳しく
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../detail/history/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    制作背景
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../detail/system/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    システムの詳細
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../detail/role/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ユーザーの権限
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    クラ代・団体代表者向け
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            クラ代・団体代表者向け
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../owner/manage_group/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    団体情報の編集
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../owner/video_stream/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    映像配信
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    チーフ会入校処理担当者向け
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            チーフ会入校処理担当者向け
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../entry/about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    来校者の入校処理とは
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    開発者向け
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            開発者向け
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    はじめに
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quaint/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    QUAINTの構造
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../github/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codespace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Codespace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../swagger-ui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    APIドキュメント
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dummy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    フロントエンド(quaint-app)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            フロントエンド(quaint-app)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../role/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    権限一覧【工事中】 
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Vueとは何か
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Vueとは何か
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vue_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vueとは何か
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ディレクトリ位置による違い
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vue_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      vueファイルの構造
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template" class="md-nav__link">
+    <span class="md-ellipsis">
+      templateについて詳しく
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="templateについて詳しく">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      具体的な書き方
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component" class="md-nav__link">
+    <span class="md-ellipsis">
+      その他のcomponent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      変数について
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      ディレクティブ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script" class="md-nav__link">
+    <span class="md-ellipsis">
+      scriptについて詳しく
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="scriptについて詳しく">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      具体的な書き方
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#this" class="md-nav__link">
+    <span class="md-ellipsis">
+      スコープとthis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      template内で記述する
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      その他有用なもの
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#style" class="md-nav__link">
+    <span class="md-ellipsis">
+      styleについて詳しく
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="styleについて詳しく">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      具体的な書き方
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      template内で設定する
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      【工事中】
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nuxt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nuxtについて詳しく
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theme-color/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    テーマカラーの設定
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    フロントエンドのデプロイ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../etc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    その他【工事中】
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dummy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../back/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    バックエンドAPI(quaint-api)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dummy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    データベース【工事中】
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dummy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_12" id="__nav_5_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    サーバー管理【工事中】
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_12">
+            <span class="md-nav__icon md-icon"></span>
+            サーバー管理【工事中】
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dummy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dummy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wiki/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wiki管理(quaint-docs)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    昨年度IT委員会勉強会資料
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            昨年度IT委員会勉強会資料
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../studybook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    もくじ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../studybook/spring_day0_setup_environment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    春休み0日目 環境構築
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../studybook/spring_day1_tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    春休み1日目 ツールの使い方
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../studybook/spring_day2_nuxtjs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    春休み2日目 Nuxt.js入門
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://seiryofes.com" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    もどる
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vue_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vueとは何か
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ディレクトリ位置による違い
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vue_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      vueファイルの構造
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template" class="md-nav__link">
+    <span class="md-ellipsis">
+      templateについて詳しく
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="templateについて詳しく">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      具体的な書き方
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component" class="md-nav__link">
+    <span class="md-ellipsis">
+      その他のcomponent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      変数について
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      ディレクティブ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script" class="md-nav__link">
+    <span class="md-ellipsis">
+      scriptについて詳しく
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="scriptについて詳しく">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      具体的な書き方
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#this" class="md-nav__link">
+    <span class="md-ellipsis">
+      スコープとthis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      template内で記述する
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      その他有用なもの
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#style" class="md-nav__link">
+    <span class="md-ellipsis">
+      styleについて詳しく
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="styleについて詳しく">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      具体的な書き方
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      template内で設定する
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      【工事中】
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="vue">Vueとは何か</h1>
+<h2 id="vue_1">Vueとは何か</h2>
+<blockquote>
+<p>Vue (発音は /vjuː/、view と同様) は、ユーザーインターフェースの構築のための JavaScript フレームワークです。標準的な HTML、CSS、JavaScript を土台とする、コンポーネントベースの宣言的なプログラミングモデルを提供します。シンプルなものから複雑なものまで、ユーザーインターフェースの開発を効率的に支えるフレームワークです。<br />
+<a href="https://ja.vuejs.org/guide/introduction.html#what-is-vue">Vue 3の公式ドキュメント</a>より  </p>
+</blockquote>
+<p>QUAINTのフロントエンドで用いている Nuxt.js (後述)のベースとなっている、JavaScript のフレームワークです。<br />
+正式名称は Vue.js です。  </p>
+<p>バージョンは Vue 2 です。そのため Vue 3 の書き方とは異なる部分が多々ありますので注意してください。  </p>
+<p>ちなみに Vue.<strong>js</strong> の <strong>js</strong> とは、<strong>J</strong>ava<strong>S</strong>cript の略です。<br />
+ただし、QUAINT では JavaScript ではなく TypeScript を主に用いています。<br />
+詳しくは：<a href="#script">scriptについて詳しく</a></p>
+<p>quaint-appレポジトリは、そのlanguageの9割以上をVueが占めているように、<br />
+Vueのファイルである<code>.vue</code>ファイルが基本となっています。<br />
+このページでも、vueファイルについてを主に記述します。</p>
+<p><br><br></p>
+<h2 id="_1">ディレクトリ位置による違い</h2>
+<p>vueファイルは、pagesフォルダ配下、layoutフォルダ配下、componentsフォルダ配下に配置します。</p>
+<p>pagesフォルダ配下のものは、seiryofes.comの各ページの中身にあたります。<br />
+詳しくは：<a href="../nuxt/#_1">ルーティング</a>  </p>
+<p>layoutsフォルダ配下のものは、seiryofes.comのどのページでも表示されうるもの、例えば左上のハンバーガーメニューや(layouts/default.vue)、存在しないURLに飛んだ時の画面など(layouts/error.vue)です。<br />
+詳しくは：<a href="../nuxt/#fallback">fallbackについて</a>  </p>
+<p>componentsフォルダ内には、どのページでも使える自作componentを記述したものを入れます。<a href="https://2023.seiryofes.com/">2023年度</a>においてはあまり使いませんでしたが、もっと積極的に使うべきものです。  </p>
+<p>このページでは基本的に、pagesフォルダ、layoutsフォルダ配下のvueファイルを想定しています。</p>
+<p><br><br></p>
+<h2 id="vue_2">vueファイルの構造</h2>
+<p>vueファイルの大まかな構造は次のようになっています。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;template&gt;
+    &lt;!--
+    内容 
+    --&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+    // 内容
+    /*
+    内容
+    */
+&lt;/script&gt;
+
+&lt;style&gt;
+    /* 内容 */
+&lt;/style&gt;
+</code></pre></div></td></tr></table></div>
+<p>大きく分けると、以下の3つのセクションで構成されます。</p>
+<h3>template</h3>
+
+<p><code>&lt;template&gt;</code>では、componentを用いて画面そのものを設定します。<br />
+componentとは、画面上のボタンや検索バーなど、画面の構成部品のことです。<br />
+例えば、この位置にボタンを設置し、この位置に検索バーを設置する、といったことを行います。<br />
+HTML と Vue.js の独自の書き方、および Vuetify を使って記述します。<br />
+<a href="#template">templateについて詳しく</a></p>
+<h3>script</h3>
+<p><code>&lt;script&gt;</code>では、表示される画面の裏で動く処理、いわばページを「動かす」ための記述をします。  </p>
+<p>例えば、<code>&lt;template&gt;</code>のボタン1が押されたとき、<code>&lt;script&gt;</code>の処理1を行うようにする、といったことを行います。<br />
+JavaScript の拡張版である TypeScript を基本として、Vue.js や Nuxt.js の独自の書き方も用いて記述します。<br />
+<a href="#script">scriptについて詳しく</a></p>
+<h3>style</h3>
+
+<p><code>&lt;style&gt;</code>では、画面のデザインを調整します。<br />
+例えば、この文章を中央寄せにして、この文章の色を赤色にする、といったことを行います。<br />
+CSS で記述します。これら3つの中では最も単純だと思います。<br />
+<a href="#style">styleについて詳しく</a></p>
+<p><br><br>
+また、Node.js という言わば「JavaScriptの実行環境」がありますが、開発する上ではあまり気にしなくて結構です。<br />
+詳しくは省きます。</p>
+<p><br><br></p>
+<h2 id="template">templateについて詳しく</h2>
+<blockquote>
+<p>HTML と Vue.js の独自の書き方、および Vuetify を使って記述します。</p>
+</blockquote>
+<p>そもそも HTML とは、WEBページを作成するための言語のことです。<br />
+例えば、見出しや段落・表・リンクなどを設定します。<br />
+詳しくはこちら：<a href="https://saruwakakun.com/html-css/basic/html">初心者向けHTML入門</a>  </p>
+<p>では、Vuetify とは何でしょう。  </p>
+<blockquote>
+<p>Vue の CSSフレームワークの一つです。正式名称は Vuetify.js です。<br />
+Vuetify を使うと、CSSファイルを作成せずにレイアウトを整えることができます。とても便利です。<br />
+指定のタグを記述するだけで、デザイン込みのステキなパーツを表示することができます。<br />
+なお、デザインは2014年にGoogleが発表したマテリアルデザインというオシャレな概念を元に作成されています。<br />
+<a href="https://prograshi.com/language/vue-js/how-to-use-vuetify/">Vuetify（ビューティファイ）とは何か？</a>より</p>
+</blockquote>
+<p>ドキュメントが充実しています。<br />
+(<a href="https://v2.vuetifyjs.com/ja/components/buttons/">ドキュメントのリンク</a>)  </p>
+<p>バージョンは Vuetify 2 です。Vuetify 3 のドキュメントは仕様が違う箇所があるので注意してください。<br />
+(Vuetify 2 のドキュメントは日本語対応していますが Vuetify 3 は対応していないという違いもあります)  </p>
+<p>この<code>&lt;template&gt;</code>の記述は、最終的に完全に HTML のファイルに変換されます。</p>
+<p><br></p>
+<h3 id="_2">具体的な書き方</h3>
+<p>HTML と同じように、入り子構造で成ります。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;template&gt;
+    &lt;v-app&gt;
+        &lt;v-container&gt;
+            &lt;v-row&gt;
+                &lt;v-col&gt;
+                    &lt;v-hogehoge&gt;hogehoge1&lt;/v-hogehoge&gt;
+                    &lt;v-hogehoge&gt;hogehoge2&lt;/v-hogehoge&gt;
+                &lt;/v-col&gt;
+            &lt;/v-row&gt;
+        &lt;/v-container&gt;
+    &lt;/v-app&gt;
+&lt;/template&gt;
+</code></pre></div></td></tr></table></div>
+<p>HTML の書き方についてはこちら：<a href="https://saruwakakun.com/html-css/basic/html">初心者向けHTML入門</a></p>
+<p>コード全体をはさんでいる<code>&lt;template&gt;</code>が、HTML でいう<code>&lt;html&gt;</code>のようなものです。Vue 独自の書き方です。  </p>
+<details class="info" open="open">
+<summary>注意</summary>
+<p>状況は限られていますが、<code>&lt;template&gt;</code>の中に、また別に<code>&lt;template&gt;</code>タグが入ることがあります。<br />
+詳しくは【工事中】</p>
+</details>
+<p><code>&lt;v-hogehoge&gt;</code>のように、<code>v-</code>から始まっているタグは Vuetify のコンポーネントです。  </p>
+<p>また、Vuetify のものは基本的にすべて終了タグを必要とします。ですが実質的に意味をなしていないもの、例えば<code>&lt;v-spacer&gt;</code>などのために、<code>&lt;v-spacer&gt;&lt;/v-spacer&gt;</code>のことを<br />
+<code>&lt;v-spacer /&gt;</code>と略記することができます。<br />
+<code>&lt;br&gt;</code>なども<code>&lt;br /&gt;</code>と表記することがあります。  </p>
+<p>一番最初の<code>&lt;v-app&gt;</code>は必須です。<code>&lt;v-app&gt;</code>がないと Vuetify は使えません。  </p>
+<p>次の<code>&lt;v-container&gt;</code>は必須ではありませんが、基本記述するものという認識で良いです。</p>
+<details class="info">
+<summary>詳しく</summary>
+<p><code>&lt;v-container&gt;</code>中の内容は、両端に空白が挿入されるため、見やすくなります。中央寄せもされます。<br />
+対し、どうしても画面端のぎりぎりに何かを置きたい場合などは、<code>&lt;v-container&gt;</code>外に設置することで実現できます。<br />
+<a href="https://2023.seiryofes.com">2023年度のトップページ</a>の右端まで色をつけている部分がその代表例です。   </p>
+<p>しかし、<code>&lt;v-container&gt;</code>外に設置しなくても実装できたのではないかと今思っています。検証はまた今度行います。【工事中】</p>
+</details>
+<p><code>&lt;v-container&gt;</code>に加え、<code>&lt;v-row&gt;</code>や<code>&lt;v-col&gt;</code>などがあります。主にこの3つを用いて Vuetify のグリッドを構成します。<br />
+詳しくはこちら：<a href="https://comfortdesignlab.github.io/about/vuetify/grid-system">Vuetify Grid System</a>  </p>
+<p>またグリッドについては<code>&lt;v-spacer&gt;</code>も有用です。<br />
+詳しくはこちら：<a href="https://v2.vuetifyjs.com/ja/components/grids/#v-spacer">Grid system</a>  </p>
+<p>また、少し話は逸れますが、グリッドという点では margin や padding も大事な要素です。<br />
+詳しくはこちら：<a href="https://qiita.com/00__/items/d5973c7dc79b95b08739">marginやpaddingの調整がめっちゃ楽な件</a><br />
+<br><br>
+コメントアウトの方法は HTML のものと同じです。  </p>
+<p>具体的な書き方は既存のvueファイルを見て学ぶのが良いと思います。</p>
+<p><br></p>
+<h3 id="component">その他のcomponent</h3>
+<h4>NuxtLink</h4>
+
+<p>詳しくは【工事中】</p>
+<h4>client-only</h4>
+
+<p>詳しくは【工事中】</p>
+<p><br></p>
+<h3 id="_3">変数について</h3>
+<p>Vue では、データが更新されたときに自動で表示を更新します。<br />
+(この表示のことをDOMと呼び、このことをリアクティブであると表現することがあります。)  </p>
+<p>つまり、<code>&lt;template&gt;</code>と<code>&lt;script&gt;</code>の間で変数は共有されているということになります。  </p>
+<p>ただし、ある意味当然ですが、<code>&lt;template&gt;</code>ではグローバル変数しか用いることができません。<br />
+詳しくは：<a href="#this">スコープとthis</a></p>
+<p>具体的に変数を用いるには、Mustache記法や<code>v-bind</code>等があります。<br />
+Mustache記法について詳しくはこちら：<a href="https://johobase.com/vue-js-mustashe-notation/">Mustashe（マスタッシュ）記法</a><br />
+<code>v-bind</code>等については次の<a href="#_4">ディレクティブ</a>の項で説明します。</p>
+<p><br></p>
+<h3 id="_4">ディレクティブ</h3>
+<p>ディレクティブについて：<a href="https://qiita.com/y-suzu/items/9b84da0a3a9ee4a5686b">主要なディレクティブ一覧</a>  </p>
+<p>いくつか補足します。</p>
+<h4>v-ifとv-show</h4>
+
+<p>seiryofes.comでは<code>v-show</code>の方が多く用いられています。<br />
+詳しくはこちら：<a href="https://qiita.com/aqua_ix/items/61eac355f3c24d7676e1">Vue.jsのv-ifとv-showの違い</a><br />
+<a href="https://v2.ja.vuejs.org/v2/guide/conditional">条件付きレンダリング</a></p>
+<h4>v-for</h4>
+
+<p><code>v-for</code>を使う際は、必ず<code>:key="hogehoge"</code>も併記してください。<br />
+この<code>hogehoge</code>には、例えば<code>v-for="item in items"</code>の場合は<code>:key="item.id"</code>のように、配列の各要素によって異なるものを指定する必要があります。<br />
+詳しくはこちら：<a href="https://note.com/shift_tech/n/nbcae6c4ab442">key属性をつけ忘れないようにする</a></p>
+<h4>v-on</h4>
+
+<p>seiryofes.comでは<code>@click</code>で使用することが多いです。<br />
+また、<code>@click.prevent</code>および<code>@click.stop</code>について、詳しくは【工事中】</p>
+<h4>v-model</h4>
+
+<blockquote>
+<p>双方向データバインディング</p>
+</blockquote>
+<p>とは要するに、変数を<code>&lt;script&gt;</code>からも<code>&lt;template&gt;</code>からも更新できるということです。  </p>
+<p>例えば、検索窓(<code>&lt;v-text-field&gt;</code>)で<code>v-model="hogehoge"</code>とすれば、検索窓の入力内容はそのまま変数<code>hogehoge</code>の値になり、<code>&lt;script&gt;</code>から<code>hogehoge</code>の値を変更すると検索窓の入力内容も変更される、といった具合です。  </p>
+<p>また、<code>v-model="hogehoge"</code>の<code>hogehoge</code>がboolean型の場合、ふつうそれは「<code>hogehoge</code>がtrueのとき表示する」を意味します。<br />
+この手法は<code>&lt;v-snackbar&gt;</code>や<code>&lt;v-dialog&gt;</code>で多く用いられています。  </p>
+<h4>v-bind</h4>
+
+<p>あまり難しく考えない方がよいです。  </p>
+<p>例えば、<code>&lt;NuxtLink to="/groups"&gt;</code>を押せば、<a href="https://2023.seiryofes.com/groups">団体一覧のページ</a>に飛ぶことしかできません。<br />
+ですが、これを<code>&lt;NuxtLink v-bind:to="hogehoge"&gt;</code>とすると、<code>&lt;script&gt;</code>で<code>hogehoge</code>の値を<code>"/groups"</code>だとか<code>"/map"</code>だとかにすることで簡単にリンク先を変更できます。  </p>
+<p><br><br></p>
+<h2 id="script">scriptについて詳しく</h2>
+<blockquote>
+<p>JavaScript の拡張版である TypeScript を基本として、Vue.js や Nuxt.js の独自の書き方も用いて記述します。</p>
+</blockquote>
+<p>HTML や CSS がページの見た目を担当するのに対し、JavaScript は、ページを言わば「動かす」ための言語です。</p>
+<details class="warning" open="open">
+<summary>注意</summary>
+<p><strong>Javaは全く別の言語です。</strong>JavaScriptの名は、当時人気であったJavaの名にあやかりこう名付けたそうです。<br />
+前述のとおり、JSと略されることがあります。  </p>
+</details>
+<p>また、JavaScript の拡張版である TypeScript とは、JavaScript を基本にして、「型( Type )」に厳格にすることでエラーを未然に防ごうという言語です。TSと略されることがあります。</p>
+<details class="info" open="open">
+<summary>詳しく</summary>
+<p>TypeScript では、JavaScript と同じ構文などが使えます。なので、TypeScript 独自の内容以外は、JavaScript と同じと考えても良いと思います。<br />
+また、TypeScript で記述したコードは、JavaScript で記述されたコードに変換されます。<br />
+このことを<strong>コンパイル</strong>と呼びます。<br />
+例えば、JavaScript では全ての行の終わりにセミコロン<strong><code>;</code></strong>を付ける必要がありますが、TypeScript ではコンパイル時に自動で付けてくれるため必要ありません。<br />
+型( Type )について、詳しくはこちら：<a href="https://typescriptbook.jp/reference/values-types-variables">値・型・変数</a></p>
+</details>
+<p>JavaScript の書き方については、<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide">MozillaのJavaScriptガイド</a>に代表されるように、かなり多くの情報がネット上にあります。<br />
+対して、TypeScript の日本語情報はそれほど多くはありません。<br />
+その中では、<a href="https://typescriptbook.jp/">サバイバルTypeScript</a>というサイトの、<a href="https://typescriptbook.jp/reference">読んで学ぶTypeScript</a>の項の記事群が分かりやすいと思います。</p>
+<p>Nuxt.js（ナクスト・ジェイエス）は、Vue.js をベースとして開発された JavaScript フレームワークです。</p>
+<blockquote>
+<p>Vue.js 自体が JavaScript の View (HTMLファイル) のフレームワークですが、Nuxt.js はその Vue.js ファイルを使ってURLのルーティングや API 処理をはじめとするアプリケーション開発に欠かせない機能の実装を想定した仕様になっており、より開発がしやすくなっています。<br />
+<a href="https://techmania.jp/blog/javascript0009/">Nuxt.jsとは？</a>より</p>
+</blockquote>
+<p>詳しくは：<a href="../nuxt/">Nuxtについて詳しく</a>    </p>
+<p>とにかく、seiryofes.comをよりよくしてくれるフレームワークという認識で結構です。</p>
+<p>また、SEO対策も<code>&lt;script&gt;</code>で行います。<br />
+詳しくは【工事中】</p>
+<p><br></p>
+<h3 id="_5">具体的な書き方</h3>
+<p>2023/10/25時点の<a href="https://github.com/hibiya-itchief/quaint-app/blob/develop/pages/groups/index.vue">groups/index.vue</a>より抜粋しました。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span><span class="w"> </span><span class="nx">lang</span><span class="o">=</span><span class="s2">&quot;ts&quot;</span><span class="o">&gt;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Group</span><span class="p">,</span><span class="w"> </span><span class="nx">Tag</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;types/quaint&#39;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Vue</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;vue&#39;</span>
+
+<span class="kr">type</span><span class="w"> </span><span class="nx">Data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">nowloading</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span>
+<span class="w">  </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="kt">Tag</span><span class="p">[]</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Vue</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;GroupsPage&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">auth</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="p">,</span>
+<span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="nx">asyncData</span><span class="p">({</span><span class="w"> </span><span class="nx">$axios</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="w"> </span><span class="p">})</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Partial</span><span class="o">&lt;</span><span class="nx">Data</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">payload</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">undefined</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">groups</span><span class="o">:</span><span class="w"> </span><span class="kt">payload.groups</span><span class="p">,</span><span class="w"> </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="kt">payload.tags</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">task</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">$axios</span><span class="p">.</span><span class="nx">$get</span><span class="p">(</span><span class="s1">&#39;/groups&#39;</span><span class="p">),</span><span class="w"> </span><span class="nx">$axios</span><span class="p">.</span><span class="nx">$get</span><span class="p">(</span><span class="s1">&#39;/tags&#39;</span><span class="p">)]</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">groups</span><span class="o">:</span><span class="w"> </span><span class="kt">res</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="kt">res</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">data</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">Data</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">nowloading</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">head</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;探す (団体一覧)&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">meta</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="c1">//省略</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">created</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 内容</span>
+<span class="w">  </span><span class="p">},</span>
+
+<span class="w">  </span><span class="nx">methods</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">SearchGroups</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// 内容</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">FilterGroups</span><span class="p">(</span><span class="nx">group</span><span class="o">:</span><span class="w"> </span><span class="kt">Group</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// 内容</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="o">&lt;</span><span class="err">/script&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>順に説明します。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span><span class="w"> </span><span class="nx">lang</span><span class="o">=</span><span class="s2">&quot;ts&quot;</span><span class="o">&gt;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Group</span><span class="p">,</span><span class="w"> </span><span class="nx">Tag</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;types/quaint&#39;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Vue</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;vue&#39;</span>
+</code></pre></div></td></tr></table></div>
+<p>あまり気にしなくて結構です。 <br />
+2行目では、 <a href="https://github.com/hibiya-itchief/quaint-app/blob/develop/types/quaint.ts">types/quaint.ts</a>でまとめて定義している型( Type )のうち2つを<code>import</code>しています。各ページ、使うものだけを<code>import</code>してください。  </p>
+<details class="info" open="open">
+<summary>詳しく</summary>
+<p>例えば、<code>Tag</code>についてはこのようになっています。</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">Tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">tagname</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+これにより、型が<code>Tag</code>の変数は、必ずそのプロパティに型が<code>string</code>である<code>id</code>と、同じく型が<code>string</code>である<code>tagname</code>を持つということになります。<br />
+また、このファイルで定義されている型はすべて大文字から始まります。<br />
+参考：<a href="https://typescriptbook.jp/reference/values-types-variables/type-alias">型エイリアス</a>  </p>
+</details>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kr">type</span><span class="w"> </span><span class="nx">Data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">nowloading</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span>
+<span class="w">  </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="kt">Tag</span><span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>このページで使われるグローバル変数の型を定義しています。<br />
+グローバル変数について：<a href="#this">スコープとthis</a><br />
+必ずしも必須というわけではなく、型を定義せず使っているページもあります。<br />
+<code>Tag[]</code>というのはすべての要素が<code>Tag</code>型の配列のことです。  </p>
+<p>変数名はsnake_caseとlowerCamelCaseのどちらかで命名しています。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Vue</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;GroupsPage&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">auth</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="p">,</span>
+</code></pre></div></td></tr></table></div>
+<p>12行目の記述は、このページはログインしなくても閲覧できるということを意味します。<br />
+<code>auth</code>のデフォルトはtrueとなっています。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="nx">asyncData</span><span class="p">({</span><span class="w"> </span><span class="nx">$axios</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="w"> </span><span class="p">})</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Partial</span><span class="o">&lt;</span><span class="nx">Data</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">payload</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">undefined</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">groups</span><span class="o">:</span><span class="w"> </span><span class="kt">payload.groups</span><span class="p">,</span><span class="w"> </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="kt">payload.tags</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">task</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">$axios</span><span class="p">.</span><span class="nx">$get</span><span class="p">(</span><span class="s1">&#39;/groups&#39;</span><span class="p">),</span><span class="w"> </span><span class="nx">$axios</span><span class="p">.</span><span class="nx">$get</span><span class="p">(</span><span class="s1">&#39;/tags&#39;</span><span class="p">)]</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">groups</span><span class="o">:</span><span class="w"> </span><span class="kt">res</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="kt">res</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+</code></pre></div></td></tr></table></div>
+<p>この部分の記述について、【工事中】<br />
+詳しくは：<a href="../nuxt/#_2">レンダリング</a>     </p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="nx">data</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">Data</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">nowloading</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+</code></pre></div></td></tr></table></div>
+<p>この部分では、先ほど用意したグローバル変数の初期値を設定します。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="nx">head</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;探す (団体一覧)&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">meta</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="c1">//省略</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+</code></pre></div></td></tr></table></div>
+<p>29行目では、ページのタイトルを設定します。<br />
+<img alt="画像" src="../images/vue-title.png" /><br />
+30行目付近ではSEO対策の文言を入力します。<br />
+詳しくは：【工事中】</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="nx">created</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 内容</span>
+<span class="w">  </span><span class="p">},</span>
+</code></pre></div></td></tr></table></div>
+<p>createdの部分に記述した内容は、ページが開かれたときに実行されます。<br />
+また、ほぼ同じ挙動を示すmountedというものもあります。<br />
+詳しくは：<a href="../nuxt/#_2">レンダリング</a>     </p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="nx">methods</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">SearchGroups</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// 内容</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">FilterGroups</span><span class="p">(</span><span class="nx">group</span><span class="o">:</span><span class="w"> </span><span class="kt">Group</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// 内容</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="o">&lt;</span><span class="err">/script&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>methodsについて：<a href="https://progtext.net/programming/vue-method/">メソッドの書き方と呼び出す方法</a></p>
+<p>また、method(関数)内でreturnすると、値を返すことができます。</p>
+<details class="note" open="open">
+<summary>例</summary>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;template&gt;
+    &lt;!----&gt;
+        &lt;v-btn v-show=&quot;HogeHoge()&quot;&gt;Hoge&lt;/v-btn&gt;
+    &lt;!----&gt;
+&lt;/template&gt;
+
+&lt;script lang=&quot;ts&quot;&gt;
+// 省略
+methods: {
+    HogeHoge() {
+        return true
+        }
+}
+&lt;/script&gt;
+</code></pre></div></td></tr></table></div>
+<code>&lt;v-btn&gt;</code>は<code>HogeHoge()</code>を実行します。その結果trueが帰ってきたので、結果的に<code>v-show="true"</code>となります。</p>
+</details>
+<p>ただし、returnすると強制的にそこで関数が終わるので注意です。</p>
+<p>thisについては<a href="#this">次の項</a>で説明します。</p>
+<p>関数名はPascalCaseで命名するようにしています。</p>
+<p><br></p>
+<h3 id="this">スコープとthis</h3>
+<p>スコープについて：<a href="https://typescriptbook.jp/reference/statements/variable-scope">変数のスコープ</a></p>
+<p><code>&lt;script&gt;</code>においては、グローバル変数を指定するときに<code>this.</code>という記法を用います。</p>
+<div class="admonition note">
+<p class="admonition-title">例</p>
+<p>変数<code>hogehoge</code>であれば、<code>this.hogehoge</code></p>
+</div>
+<p>それ以外はそのままです。</p>
+<p>ただし、<code>&lt;template&gt;</code>で変数を呼び出す際には、<code>this.</code>は不要です。<br />
+そもそも、グローバル変数しか呼び出すことはできません。  </p>
+<p><br></p>
+<h3 id="template_1">template内で記述する</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;template&gt;
+    &lt;!----&gt;
+        &lt;v-btn @click=&quot;HogeHoge()&quot;&gt;Hoge&lt;/v-btn&gt;
+        &lt;v-btn @click=&quot;hogehoge = 5&quot;&gt;Hoge&lt;/v-btn&gt;
+        &lt;!-- この二つは同じ挙動 --&gt;
+    &lt;!----&gt;
+&lt;/template&gt;
+
+&lt;script lang=&quot;ts&quot;&gt;
+// 省略
+methods: {
+    HogeHoge() {
+        this.hogehoge = 5
+        }
+}
+&lt;/script&gt;
+</code></pre></div></td></tr></table></div>
+<p>このように、関数を実行するはずだったところをそのまま記述することで、同じ挙動を実現できます。<br />
+また、2つ以上の処理を行う場合、セミコロン<strong><code>;</code></strong>を使って実現できます。単に改行でもかまいません。
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;v-btn @click=&quot;hoge = 5; hogehoge = 10&quot;&gt;Hoge&lt;/v-btn&gt;
+&lt;v-btn @click=&quot;
+  hoge = 5
+  hogehoge = 10
+  &quot;&gt;Hoge&lt;/v-btn&gt;
+&lt;!-- この二つは同じ挙動 --&gt;
+</code></pre></div></td></tr></table></div></p>
+<p><br></p>
+<h3 id="_6">その他有用なもの</h3>
+<h4>console.log</h4>
+
+<p>デバッグの際に重宝するメソッドです。<br />
+適宜変数や配列の値を出力することができるので、エラーの起きている原因を簡単に調査できます。<br />
+詳しくは：<a href="https://www.javadrive.jp/javascript/console_obj/index1.html">コンソールにログを出力する</a></p>
+<p>ただし、一般に製品版では使うべきではないとされています。あくまでも開発ツールの一つだということですね。</p>
+<h4>Playground</h4>
+
+<p>Playgroundとは、手軽にコードの試し書きができる開発環境です。  </p>
+<p>例としてTypeScript公式：<a href="https://www.typescriptlang.org/ja/play">Playground</a></p>
+<p>関数やメソッドの動作やコンポーネントの表示などをチェックできます。</p>
+<p>検索すれば、HTML・CSS・Vue・VuetifyなどもPlaygroundがあります。</p>
+<p><br><br></p>
+<h2 id="style">styleについて詳しく</h2>
+<blockquote>
+<p>CSS で記述します。</p>
+</blockquote>
+<p>CSS とは、Webページの文字の色や大きさ、背景、配置といったスタイル（見た目）を設定する言語です。<br />
+詳しくはこちら：<a href="https://saruwakakun.com/html-css/basic/css">初心者向けCSS（スタイルシート）入門</a></p>
+<p>また、より高度な書き方に<strong><code>@</code></strong>を使うものや<code>hover</code>といったものがあります。<br />
+詳しくは【工事中】  </p>
+<p><br></p>
+<h3 id="_7">具体的な書き方</h3>
+<p>CSS の書き方そのままです。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;script&gt;
+/*
+CSSの書き方
+*/
+&lt;/script&gt;
+</code></pre></div></td></tr></table></div>
+<p><a href="https://2023.seiryofes.com">2023年度</a>ではトップページや「ご案内」の6項目のページに多く用いられていました。</p>
+<p>書き方についてはこちら：<a href="https://saruwakakun.com/html-css/basic/css">初心者向けCSS（スタイルシート）入門</a></p>
+<p>class名などはkebab-caseで命名します。</p>
+<p><br></p>
+<h3 id="template_2">template内で設定する</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;template&gt;
+    &lt;!----&gt;
+        &lt;span class=&quot;hogehoge&quot;&gt; hogehoge &lt;/span&gt;
+        &lt;span style=&quot;color: #F00;&quot;&gt; hogehoge &lt;/span&gt;
+        &lt;!-- この二つは同じ表示 --&gt;
+    &lt;!----&gt;
+&lt;/template&gt;
+
+&lt;style&gt;
+.hogehoge {
+    color: #F00;
+}
+&lt;/style&gt;
+</code></pre></div></td></tr></table></div>
+<p>このように、本来<code>&lt;style&gt;</code>で書くべきものを、<code>style=" "</code>で記述することで同じ表示を実現できます。<br />
+単発的に色を変更するときなど、時にこの手法の方が見やすいコードになることがあるので、積極的に活用しましょう。</p>
+<p><br><br></p>
+<h2 id="_8">【工事中】</h2>
+<p><code>&lt;template&gt;</code>において、<code>&lt;v-icon&gt;</code>にはマテリアルデザインのアイコンを使用しています。
+一覧：<a href="https://pictogrammers.com/library/mdi/">Material Design Icons</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2024 都立日比谷高校 IT委員会
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+    
+  </body>
+</html>
