@@ -30,11 +30,11 @@ nav:
           - "ユーザーの権限": detail/role.md
 
     - "一般来場者向け":
-        - "ログイン": guest/login.md
-        - "団体情報一覧": guest/groups.md
-        - "整理券取得": guest/tickets.md
-        - "グループ機能": guest/team.md
-        - "マップ機能": guest/map.md
+          - "ログイン": guest/login.md
+          - "団体情報一覧": guest/groups.md
+          - "整理券取得": guest/tickets.md
+          - "グループ機能": guest/team.md
+          - "マップ機能": guest/map.md
 
     - "クラ代・団体代表者向け":
           - "団体情報の編集": owner/manage_group.md
