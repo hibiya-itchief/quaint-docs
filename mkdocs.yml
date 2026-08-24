@@ -10,7 +10,7 @@ theme:
     font:
         text: M PLUS 1p
         code: Source Code Pro
-    logo: assets/logo.png
+    logo: assets/ITlogo.jpeg
     features:
         - navigation.tabs
         #  - tabs
