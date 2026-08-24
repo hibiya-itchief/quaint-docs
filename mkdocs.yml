@@ -29,6 +29,13 @@ nav:
           - "システムの詳細": detail/system.md
           - "ユーザーの権限": detail/role.md
 
+    - "一般来場者向け":
+        - "ログイン": guest/login.md
+        - "団体情報一覧": guest/groups.md
+        - "整理券取得": guest/tickets.md
+        - "グループ機能": guest/team.md
+        - "マップ機能": guest/map.md
+
     - "クラ代・団体代表者向け":
           - "団体情報の編集": owner/manage_group.md
           - "映像配信": owner/video_stream.md
@@ -72,7 +79,7 @@ nav:
           - "春休み1日目 ツールの使い方": studybook/spring_day1_tutorial.md
           - "春休み2日目 Nuxt.js入門": studybook/spring_day2_nuxtjs.md
 
-    - "もどる": https://seiryofes.com
+    - "もどる": https://2026.seiryofes.com
 
 markdown_extensions:
     - admonition
@@ -88,4 +95,4 @@ extra_css:
     - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css
     - design.css
 
-copyright: "© 2024 都立日比谷高校 IT委員会"
+copyright: "© 2026 都立日比谷高校 IT委員会"
