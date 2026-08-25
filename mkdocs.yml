@@ -10,7 +10,7 @@ theme:
     font:
         text: M PLUS 1p
         code: Source Code Pro
-    logo: assets/logo.png
+    logo: assets/ITlogo.jpeg
     features:
         - navigation.tabs
         #  - tabs
@@ -35,6 +35,11 @@ nav:
           - "整理券取得": guest/tickets.md
           - "グループ機能": guest/team.md
           - "マップ機能": guest/map.md
+          - "エラーが起きたら": guest/error.md
+
+    - "生徒向け":
+          - "整理券受付": student/reception.md
+          - "負荷テスト手順": student/load_testing.md
 
     - "クラ代・団体代表者向け":
           - "団体情報の編集": owner/manage_group.md
