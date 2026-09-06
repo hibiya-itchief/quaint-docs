@@ -34,6 +34,7 @@ nav:
           - "団体情報一覧": guest/groups.md
           - "整理券取得": guest/tickets.md
           - "グループ機能": guest/team.md
+          - "整理券受付": guest/guest_entry.md
           - "マップ機能": guest/map.md
           - "エラーが起きたら": guest/error.md
 
@@ -45,8 +46,6 @@ nav:
           - "団体情報の編集": owner/manage_group.md
           - "映像配信": owner/video_stream.md
 
-    - "チーフ会入校処理担当者向け":
-          - "来校者の入校処理とは": entry/about.md
 
     - "開発者向け":
           - "はじめに": developer/index.md
