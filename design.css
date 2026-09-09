@@ -1,0 +1,30 @@
+.md-header {
+  background-color: #335594;
+  color: #fff;
+}
+
+.md-tabs__inner {
+  background-color: #335594;
+}
+
+nav.md-tabs {
+  background-color: #335594;
+}
+/*#0671BF*/
+.md-tabs--active {
+  color:#ffffff !important;
+}
+.md-typeset h1 {
+    /*font-size: 24pt;*/
+    font-weight: bold;
+    color: #000;
+    border-bottom: solid 2px #335594;
+    padding-bottom: 5px;
+  }
+  .md-typeset h2 {
+    border-bottom: 1px dotted #888;
+  }
+
+img {
+  border: 2px solid #335594;
+}
